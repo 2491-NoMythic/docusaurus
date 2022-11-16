@@ -19,6 +19,8 @@ Royce made thew swerve drive work and fixed a bunch of stuff related to it. Ther
 
 The new kids moved on to working on robot boards. They've finally learned about staring at the code trying to find errors when everything should be working perfectly. Ben's response was 'Programming!'.
 
+Ben and I worked on the Griffins TEST Robot. We got the elevator coded. Probably.
+
 Overall rating of the day: 7/10
 
 but nowhere to hide,
