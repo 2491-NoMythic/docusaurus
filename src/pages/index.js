@@ -4,17 +4,19 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import NoMythicImageUrl from '@site/static/img/nomythic_logo.png';
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
+      <img src={NoMythicImageUrl} style={{marginLeft: '20px'}}/>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
       </div>
+      <img src={NoMythicImageUrl} style={{marginRight: '20px'}} />
     </header>
   );
 }

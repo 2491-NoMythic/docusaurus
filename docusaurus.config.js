@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '2491 NoMythic Robotics',
-  tagline: 'Documentation is cool',
+  tagline: 'Documentation is cool (robots are cooler)',
   url: 'https://2491nomythic-docs.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -46,8 +46,8 @@ const config = {
       navbar: {
         title: 'NoMythic',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/nomythic_logo.png',
+          alt: 'NoMythic Site Logo',
+          src: 'img/nomythic_unicorn.png',
         },
         items: [
           {
@@ -58,7 +58,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/2491-NoMythic',
             label: 'GitHub',
             position: 'right',
           },
@@ -111,7 +111,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} 2491 NoMythic. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} - 2491 NoMythic. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
