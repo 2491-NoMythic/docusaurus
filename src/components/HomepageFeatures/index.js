@@ -1,49 +1,53 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Robot Docs',
+    link: '/docs/category/robot-docs',
+    imageurl: require('@site/static/img/Clover_Janusx200.jpg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Documentaion out team wants to know for next time. What worked, what didn't,
+        and info on each years robot is in this section.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Tutorials',
+    link: '/docs/category/robot-tutorials',
+    imageurl: require('@site/static/img/circuit_playground.jpg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Tutorials and How to's to help you learn different topics. From python on 
+        Adafruit Circuit boards to an Intro to Java, and more.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'NoMythicApp',
+    link: '/docs/no-mythic-app/what-is-it',
+    imageurl: require('@site/static/img/NoMythicApp.jpg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+       NoMythic is building an app to help organize and administer the team.
+       Check here to find out what it is, and how to use it.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({imageurl, link, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={imageurl} className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
-        <p>{description}</p>
+        <Link to={link}><p>{description}</p></Link>
       </div>
     </div>
   );

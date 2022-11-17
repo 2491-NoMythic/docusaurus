@@ -6,3 +6,14 @@ sidebar_position: 1
 
 Herein lies the documentaion for a robotics team of no mythical signifigance. 
 
+The idea of the documentation site for NoMythic is to be a place that we can transfer knowledge from student to student, 
+from year to year, and from team to team. The hope is to help others while helping ourselves. If you discovered something,
+write it down, learn it, share it.
+
+## Learn more
+
+The info that came with the demo install is at [here](/how-to-docu/intro.md)
+
+Check out the guides on the [docusaurus site](https://docusaurus.io/docs/category/guides)
+
+To make changes you need access to our github project - [docusaurus](https://github.com/2491-NoMythic/docusaurus)
