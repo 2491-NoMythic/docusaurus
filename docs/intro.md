@@ -16,4 +16,6 @@ The info that came with the demo install is at [here](/how-to-docu/intro.md)
 
 Check out the guides on the [docusaurus site](https://docusaurus.io/docs/category/guides)
 
-To make changes you need access to our github project - [docusaurus](https://github.com/2491-NoMythic/docusaurus)
+To make changes you need access to our github project - [docusaurus](https://github.com/2491-NoMythic/docusaurus) Anyone can get the code, or clone the project. To make contributions you will need "push" access.
+
+You might want to check out [How to Git](./how-to/how-to-git)
