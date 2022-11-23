@@ -6,6 +6,9 @@ sidebar_position: 3
 
 If the question was asked "How do I edit a file" you would get lots of opinions, and it would matter what type of files we meant. You don't use a CAD program, an image editor, and a text editor all on the same file. At least most of us don't we use purpose built tools. Here I am only going to talk about text editors. And just the ones we use with robotics here at NoMythic. If you have a favorite, go ahead and use it, but the mentors may not be as knowledgable about that tool if you have issues.
 
+## Notepad on Windows, TextEdit on Mac
+
+If you need to edit one file, these can work fine, but using one of these other editors makes editing, searching, and navigating between the files in a project much easier.
 ## MU Editor (circuit python)
 
 We often start with students with Circuit Python, and use this very basic editor. It is not the best at giving code suggestions, but it does help format python files, and display error message on the hardware devices we use with a  built in serial console. Check out [here](https://codewith.mu) to install it.
@@ -16,7 +19,7 @@ Sometimes we code sik lights and sensors on helper boards. If we are coding thes
 
 ## VS Code (robot code, NoMythicApp, and docusaurus)
 
-VS Code has become a defacto stndard editor in many circles due to it being free, but as powerful and extensible as it's expensive professional cousins. We use it for lot of things at NoMythic. It is currently the standard recommended editor for createing java based robot code. For developing java robot code, I reccomend following the [instructions at First](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) and getting the software bundle that includes it. Be sure to check the box that installs VS Code.
+VS Code has become a defacto stndard editor in many circles due to it being free, but as powerful and extensible as it's expensive professional cousins. We use it for lot of things at NoMythic. It is currently the standard recommended editor for createing java based robot code. For developing java robot code, I recommend following the [instructions at First](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) and getting the software bundle that includes it. Be sure to check the box that installs VS Code.
 
 The NoMythicApp is also being developed in Typescript/Javascript using VS Code. It is recommended but not required to use it for development. You can use the VS Code that came with the FRC install, or if you do not need those tools, download it [here](https://code.visualstudio.com)
 

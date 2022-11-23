@@ -8,7 +8,7 @@ sidebar_position: 2
 
 If you are on a Mac, pat yourself on the back and go to the next section, git is built in.
 
-On Windows, I suggest installing the GitBash *does github desktop stil have command line?*. This will give you a terminal with the git tools installed. See [Install Git](https://www.gitkraken.com/learn/git/git-download)
+On Windows, I suggest installing GitBash. This will give you a terminal with the git tools installed. See [Install Git](https://www.gitkraken.com/learn/git/git-download)
 
 ## What is Git?
 
@@ -142,6 +142,8 @@ And we are done.
 The above workflow will 'Just Work' most of the time, but imagine that two people worked on the same file at the same time. We would have to put all of those changes togeter. Sometimes git can handle this, orther times you will need to do a merge. But that might be better explained in person.
 
 ## Other Resources
+
+[git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
 [GitKracken tutorials](https://www.gitkraken.com/learn/git) go more indepth than here
 
