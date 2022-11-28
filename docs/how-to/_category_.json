@@ -1,0 +1,8 @@
+{
+  "label": "How To Do X",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Collection of how to do something. One page. Not necesarily a robot thing."
+  }
+}
