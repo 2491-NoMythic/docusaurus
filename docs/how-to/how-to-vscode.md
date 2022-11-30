@@ -18,7 +18,7 @@ Docusaurous pages are written mostly in markdown. This means any text editor wil
 
 When you first open VSCode you will see something like the picture above. It is designed to work with a project, so we are going to open a folder for a project. For this example we will use our docusaurus project. If you don't have it dowloaded yet you can still follow along, maybe pick another folder on the computer.
 
->If you don't have docusaurus you might want to check out [How to Git](./how-to-git.md) to use Git from the command line, or follow the [How to Git with VSCode](./how-to-git-with-vscode.md) to learn how to use Git inside VSCode. Or just pick a folder on your computer that has text files.
+>If you don't have docusaurus you might want to check out [How to Git](./how-to-git-broken.md) to use Git from the command line, or follow the [How to Git with VSCode](./how-to-git-with-vscode.md) to learn how to use Git inside VSCode. Or just pick a folder on your computer that has text files.
 
 So click Open Folder. Navigate to the docusaurus folder and press the Open button.
 
