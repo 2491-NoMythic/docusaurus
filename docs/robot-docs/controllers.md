@@ -16,6 +16,7 @@ private double getJoystickDegrees(int horizontalAxis, int verticalAxis) {
     return Math.toDegrees(Math.atan2(xAxis, yAxis));
 }
 ```
+<iframe src="https://www.desmos.com/calculator/s0q0qcbd08?embed" width="500" height="500" style={{border: '1px solid purple'}} frameborder="0"></iframe>
 
 ## Magnitude
 The magnitude is the distance a joystick is from the center.
@@ -29,3 +30,7 @@ private double getJoystickMagnitude(int horizontalAxis, int verticalAxis) {
     return value;
 }
 ```
+<iframe src="https://www.desmos.com/calculator/mt1txe7ywn?embed" width="500" height="500" style={{border: '1px solid purple'}} frameborder="0"></iframe>
+
+## Squared inputs and Deadbanding
+<iframe src="https://www.desmos.com/calculator/sdnanco2ol?embed" width="500" height="500" style={{border: '1px solid purple'}} frameborder="0"></iframe>
