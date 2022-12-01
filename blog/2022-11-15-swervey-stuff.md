@@ -3,7 +3,7 @@ slug: Week5
 title: Test Week 5!
 authors:
   - name: Benjamin Hang
-    title: Yours Trult TM
+    title: Yours Truly TM
   - name: August Turner
     title: "[REDACTED]"
 
