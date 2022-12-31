@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Documentation Intro
 
-Herein lies the documentaion for a robotics team of no mythical signifigance. 
+Herein lies the documentation for a robotics team of no mythical significance. 
 
 The idea of the documentation site for NoMythic is to be a place that we can transfer knowledge from student to student, 
 from year to year, and from team to team. The hope is to help others while helping ourselves. If you discovered something,

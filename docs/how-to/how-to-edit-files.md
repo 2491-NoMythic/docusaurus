@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # How to edit files
 
-If the question was asked "How do I edit a file" you would get lots of opinions, and it would matter what type of files we meant. You don't use a CAD program, an image editor, and a text editor all on the same file. At least most of us don't we use purpose built tools. Here I am only going to talk about text editors. And just the ones we use with robotics here at NoMythic. If you have a favorite, go ahead and use it, but the mentors may not be as knowledgable about that tool if you have issues.
+If the question was asked "How do I edit a file" you would get lots of opinions, and it would matter what type of files we meant. You don't use a CAD program, an image editor, and a text editor all on the same file. At least most of us don't we use purpose built tools. Here I am only going to talk about text editors. And just the ones we use with robotics here at NoMythic. If you have a favorite, go ahead and use it, but the mentors may not be as knowledgeable about that tool if you have issues.
 
 ## Notepad on Windows, TextEdit on Mac
 
@@ -19,11 +19,11 @@ Sometimes we code sik lights and sensors on helper boards. If we are coding thes
 
 ## VS Code (robot code, NoMythicApp, and docusaurus)
 
-VS Code has become a defacto stndard editor in many circles due to it being free, but as powerful and extensible as it's expensive professional cousins. We use it for lot of things at NoMythic. It is currently the standard recommended editor for createing java based robot code. For developing java robot code, I recommend following the [instructions at First](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) and getting the software bundle that includes it. Be sure to check the box that installs VS Code.
+VS Code has become a defacto standard editor in many circles due to it being free, but as powerful and extensible as it's expensive professional cousins. We use it for lot of things at NoMythic. It is currently the standard recommended editor for creating java based robot code. For developing java robot code, I recommend following the [instructions at First](https://docs.wpilib.org/en/stable/docs/zero-to-robot/step-2/wpilib-setup.html) and getting the software bundle that includes it. Be sure to check the box that installs VS Code.
 
 The NoMythicApp is also being developed in Typescript/Javascript using VS Code. It is recommended but not required to use it for development. You can use the VS Code that came with the FRC install, or if you do not need those tools, download it [here](https://code.visualstudio.com)
 
-Docusaurous pages are written mostly in markdown. This means any text editor will do, but useing the above link to install VS Code will allow you to see an immediate accurate preview of the markdown (.md) file that you are edting. Example:
+Docusaurus pages are written mostly in markdown. This means any text editor will do, but using the above link to install VS Code will allow you to see an immediate accurate preview of the markdown (.md) file that you are editing. Example:
 
 ![vs-code-md](./img/vscode-md.png)
 
@@ -31,6 +31,6 @@ VS Code also offers Git integration that can help with pulling and pushing files
 
 ## IntelliJ IDEA Community Edition
 
-It seems like most Java programmers like to use IntelliJ. There is a free version called the community edition, and it will work really well to write java code. It was originally created for Java codeing (now does a lot more) so as you can expect there are some pretty cools tools changing and modifying and navigating your java code. you can download it [here](https://www.jetbrains.com/idea/) There is also a [WPILIB plugin](https://plugins.jetbrains.com/plugin/9405-frc) maintained by an FRC team.
+It seems like most Java programmers like to use IntelliJ. There is a free version called the community edition, and it will work really well to write java code. It was originally created for Java coding (now does a lot more) so as you can expect there are some pretty cools tools changing and modifying and navigating your java code. you can download it [here](https://www.jetbrains.com/idea/) There is also a [WPILIB plugin](https://plugins.jetbrains.com/plugin/9405-frc) maintained by an FRC team.
 
 IntelliJ also offers Git integration that can help with pulling and pushing files to GitHub.
