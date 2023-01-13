@@ -1,5 +1,5 @@
 ---
-slug: Week8
+slug: Week8.1
 title: CRUNCH TIME ("Test Week 8 pt 2")
 authors:
   - name: Benjamin Hang
