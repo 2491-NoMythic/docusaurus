@@ -5,7 +5,7 @@ authors:
   - name: Augie Turner
     title: "[REDACTED]"
 
-tags: [updates]
+tags: [build season]
 ---
 
 It's the first Saturday of build season, and I was the only experienced programmer there in the morning.
