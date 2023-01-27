@@ -18,7 +18,7 @@ careful manuvering and signing in and a bunch of other things, all of the motors
 
 While this was happening there was some cool math being done by Yours Truly TM. It was a bunch of work on the double pivot arm and it
 kind of a pain to get everything working. Sin Cos Tan being tossed around everywhere and it was a lot of effort and I could go on and 
-on about it but you can just have the [Graph](www.desmos.com/calculator/ozocgcon3w)
+on about it but you can just have the [Graph](https://www.desmos.com/calculator/ozocgcon3w)
 
 Augie was missing :(
 Quinn was poofed for the first half of practice :(
