@@ -4,7 +4,7 @@ title: Two Authors Again
 authors:
   - name: Benjamin
     title: Yours Truly TM
-    - name: Augie
+  - name: Augie
     title: "[REDACTED]"
 tags: [build season]
 ---
