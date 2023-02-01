@@ -31,7 +31,7 @@ public class Pneumatics extends SubsystemBase {
 }
 ```
 Wow. That was so fun guys, we made a solenoid. I will note that a DoubleSolenoid is different from a regular Solenoid. A Solenoid 
-only has 1 channel to move in, whereas a DoubleSolenoid has 2. Usually we use a DoubleSolenoidSolenoids because we like the 
+only has 1 channel to move in, whereas a DoubleSolenoid has 2. Usually we use a DoubleSolenoid because we like the 
 capability to go in both directions. DoubleSolenoids are simple though. They have 3 states: Forward, Reverse, and Off. Let's think 
 about what that acutally looks like. Forward is the state of the solenoid that pushes outward, reverse is the state that retracts 
 inward and Off means that it'll do nothing. 
@@ -80,3 +80,4 @@ public class Pneumatics extends SubsystemBase {
 //Techically we have all the other calls that the SubsystemBase comes with, but these are really all we are going to worry about
 }
 ```
+That's pretty much it! If you want to call them in a command, you should refer to command based programming. Good luck with these Pneumatics!
