@@ -3,7 +3,7 @@ slug: BW3S
 title: Two Authors Again
 authors:
   - name: Benjamin
-    title: Yours Truly TM
+    title: Yours Truly™
   - name: Augie
     title: "[REDACTED]"
 tags: [build season]
