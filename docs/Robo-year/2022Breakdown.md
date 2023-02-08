@@ -1,0 +1,67 @@
+# Hello! I'm Janus
+
+My favourite color is purple and I played in the 2022 game RAPID REACT!
+
+I am named after Janus, the Roman god of beginnings and endings. The god is typically depicted with having 2 faces, one facing the future and one facing the past. This name was chosen to represent the idea that our team has come back after the pandemic and is turning a new page in our book!
+
+I can do many things! (I can't acutally do too much, but I do what I do well) I am comprised of 5 subsystems: Drivetrain, Climber, Intake, Vision, and Lights! These files with have most of the important infomation for me and my drive code as well as any personal anecdotes that came with programming me!
+
+## Drivetrain
+
+The drivetrain consists of 4 motors in a tank drive. We have LeftLead, LeftFollow, RightLead, and RightFollow and they all work in tandem. The idea of choosing a tank drive this year was to be a more physically defensive robot in order to play defense well as well as bring able to zoom and push cargo and robots around the field. Also in this subsystem is the Gyro affectionatly named "GyroBirb"
+
+### How does this Drivetrain work?
+
+If it wasn't clear from the names, there are only 2 motors that we actually supply instructions to throughout the match, LeftLead and RightLead. LeftFollow and RightFollow are programmed to do whatever we tell their lead motors do which saves roboRio processing power which is really nice. (This only works on tank drivetrains becuse we really only need 2 inputs, a left side and a right side.)
+
+```java
+        leftFollowMotor.follow(leftLeadMotor);
+        rightFollowMotor.follow(rightLeadMotor);
+```
+Within the constuctor also exists the setup for PID Tuning but this PID tuning system is a little different from normal. Both of the PID values being tuned are being stored on the name motor because we have a distance number and a turn number, so the PID tuning is pointed at the numbers only on one motor.
+
+Another tidbit is that our TeleOp drive is different from our AutoDrive, AutoDrive is the only one with PID tuning, TeleOp does not.
+
+## Climber 
+
+The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors are moving in tandem to retract or extend the climber arms. We wanted to use pneumatics becuse we thought the speed and consistency of the pneumatics would be really helpful for doing fast climbs.
+
+### How does it work?
+
+The motors are rather simple, its a simple PID loop with no kI and it is almost exclusively for autos; Otherwise, the motors were controled via the POV buttons on the PS4 controller. They have a magnetic limit switch at the bottom, preventing them from going down too far and the upward limit was predefined in the code and not controllable via the player. They have an enum designated to them to determine if they were going UP or DOWN.
+
+```java
+package frc.robot;
+
+public enum ArmExtendState {
+    DOWN,
+    UP
+}
+```
+
+One of the harder parts of the climber was controlling the state of the pneumatic and recieving what state it currently is in. We ended up creating an enum that had 2 values, IN and OUT so they we can look easily at what the arm is currently doing. If the Arm Tip State changed, the enum would change alongside it making it super easy to find.
+
+```java
+package frc.robot;
+
+public enum ArmTipState {
+    IN,
+    OUT
+}
+```
+
+## Intake 
+
+The intake is another subsystem that has 1 pneumatic and 2 motors. The pneumatic would raise and lover the intake of the robot and the motors on the end would be the things spinning bars to acutally intake and outtake the cargo.
+
+### How intake?
+
+The programming is not as complicated as some other times. An interesting part however is that out intake could hold 2 pieces of cargo and intake/outtkake them separate from each other. This system wasn't flawless, but it worked for the most part. To control the intake, there were 2 buttons to control the pneumatic to either make the inake go up or down and similarly, there were 4 buttons for the motors: left intake, right intake, left outtake, right outtake. 
+
+## Vision
+
+There is not much done with the lights this time around, but there exist a limelight on the robot and it currently functions as a drive camera. Another unimplemented idea was using a Pixy2 to sense what color the balls were inside of our intake. This was done by using color sensing and pushing it to an enum. This was never fully fleshed out, but it would have been really coooooollllllllllll.
+
+## Lights
+
+The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: Purple, which made them all purple; rainbow, which were some ooh ahh swirly lights; climbing, which made purple bits go upwards, and pit lights which made the robot go dim but not off to make robot surgery a little easier.
