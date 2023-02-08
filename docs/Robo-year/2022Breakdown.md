@@ -65,3 +65,13 @@ There is not much done with the lights this time around, but there exist a limel
 ## Lights
 
 The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: Purple, which made them all purple; rainbow, which were some ooh ahh swirly lights; climbing, which made purple bits go upwards, and pit lights which made the robot go dim but not off to make robot surgery a little easier.
+
+
+
+Programmers this year were:
+
+Liam S. (Captain)
+Royce J.
+Quinn F.
+Augie T.
+Ben H.
