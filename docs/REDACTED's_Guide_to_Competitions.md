@@ -1,4 +1,4 @@
-# [REDACTED]'s Guide to Competitions
+# REDACTED's Guide to Competitions
 
 
 1. Expect not to get much sleep, or at least have your sleep schedule disrupted. Normal hours are 5 AM to 10 PM, and that's if there's no alliance selection meeting. It gets worse for flying days to/from Worlds.
