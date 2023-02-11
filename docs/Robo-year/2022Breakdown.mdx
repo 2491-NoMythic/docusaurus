@@ -10,27 +10,22 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
   <summary>Drivetrain</summary>
   <div>
     <div>The drivetrain consists of 4 motors in a tank drive. We have LeftLead, LeftFollow, RightLead, and RightFollow and they all work in tandem. The idea of choosing a tank drive this year was to be a more physically defensive robot in order to play defense well as well as bring able to zoom and push cargo and robots around the field. Also in this subsystem is the Gyro affectionatly named "GyroBirb"
-    
     If it wasn't clear from the names, there are only 2 motors that we actually supply instructions to throughout the match, LeftLead and RightLead. LeftFollow and RightFollow are programmed to do whatever we tell their lead motors do which saves roboRio processing power which is really nice. (This only works on tank drivetrains becuse we really only need 2 inputs, a left side and a right side.)
-
 ```java
 leftFollowMotor.follow(leftLeadMotor);
 rightFollowMotor.follow(rightLeadMotor);
 ```
 Within the constuctor also exists the setup for PID Tuning but this PID tuning system is a little different from normal. Both of the PID values being tuned are being stored on the name motor because we have a distance number and a turn number, so the PID tuning is pointed at the numbers only on one motor.
-
-Another tidbit is that our TeleOp drive is different from our AutoDrive, AutoDrive is the only one with PID tuning, TeleOp does not.
+Another tidbit is that our TeleOp drive is different from our AutoDrive, AutoDrive is the only one with PID tuning, TeleOp doesn't use PID tuned driving.
 </div>
     <br/>
   </div>
 </details>
 
-## Climber 
-
-The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors are moving in tandem to retract or extend the climber arms. We wanted to use pneumatics becuse we thought the speed and consistency of the pneumatics would be really helpful for doing fast climbs.
-
-### How does it work?
-
+<details>
+  <summary>Climber</summary>
+  <div>
+    <div>The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors are moving in tandem to retract or extend the climber arms. We wanted to use pneumatics becuse we thought the speed and consistency of the pneumatics would be really helpful for doing fast climbs.
 The motors are rather simple, its a simple PID loop with no kI and it is almost exclusively for autos; Otherwise, the motors were controled via the POV buttons on the PS4 controller. They have a magnetic limit switch at the bottom, preventing them from going down too far and the upward limit was predefined in the code and not controllable via the player. They have an enum designated to them to determine if they were going UP or DOWN.
 
 ```java
@@ -53,25 +48,41 @@ public enum ArmTipState {
 }
 ```
 
-## Intake 
+</div>
+    <br/>
+  </div>
+</details>
 
-The intake is another subsystem that has 1 pneumatic and 2 motors. The pneumatic would raise and lover the intake of the robot and the motors on the end would be the things spinning bars to acutally intake and outtake the cargo.
+<details>
+  <summary>Intake</summary>
+  <div>
+    <div>The intake is another subsystem that has 1 pneumatic and 2 motors. The pneumatic would raise and lover the intake of the robot and the motors on the end would be the things spinning bars to acutally intake and outtake the cargo.
+The programming is not as complicated as some of the other subsystems. An interesting part however is that the intake could hold 2 pieces of cargo and intake/outtkake them separatly from each other. This system wasn't flawless, but it worked for the most part. To control the height of the intake, there were 2 buttons to control the pneumatic to either make the inake go up or down and similarly, there were 4 buttons for the motors: left intake, right intake, left outtake, right outtake. 
 
-### How intake?
+</div>
+    <br/>
+  </div>
+</details>
 
-The programming is not as complicated as some other times. An interesting part however is that out intake could hold 2 pieces of cargo and intake/outtkake them separate from each other. This system wasn't flawless, but it worked for the most part. To control the intake, there were 2 buttons to control the pneumatic to either make the inake go up or down and similarly, there were 4 buttons for the motors: left intake, right intake, left outtake, right outtake. 
+<details>
+  <summary>Vision</summary>
+  <div>
+    <div>There is not much done with the lights this time around, but there exists a limelight on the robot and it functions mainly as a drive camera. The idea was to find the pillar in the center and reorientate towards it automatically. 
+    Another unimplemented idea was using a Pixy2 to sense what color the balls were inside of our intake. It worked sort of but it was not very consistent and required constant re-calibrating. The information was put into an enum, but again, this was never fully fleshed out, but it would have been really coooooollllllllllll.
+</div>
+    </br>
+  </div>
+</details>
 
-## Vision
+<details>
+  <summary>Lights</summary>
+  <div>
+    <div>The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: Purple, which made them all purple; rainbow, which were some ooh ahh swirly lights; climbing, which made purple bits go upwards, and pit lights which made the robot go dim but not off to make robot surgery a little easier.</div>
+    </br>
+  </div>
+</details>
 
-There is not much done with the lights this time around, but there exist a limelight on the robot and it currently functions as a drive camera. Another unimplemented idea was using a Pixy2 to sense what color the balls were inside of our intake. This was done by using color sensing and pushing it to an enum. This was never fully fleshed out, but it would have been really coooooollllllllllll.
-
-## Lights
-
-The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: Purple, which made them all purple; rainbow, which were some ooh ahh swirly lights; climbing, which made purple bits go upwards, and pit lights which made the robot go dim but not off to make robot surgery a little easier.
-
-
-
-Programmers this year were:
+Hello! From your past programmers:
 
 Liam S. (Captain)
 Royce J.
