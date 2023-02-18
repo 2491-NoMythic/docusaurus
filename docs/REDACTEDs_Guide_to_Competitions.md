@@ -16,4 +16,4 @@
 13. Keep you phone and room key in different pockets, your phone will wipe the magnet.
 14. Stay hydrated, especially in Houston. I didn't drink enough water, and to keep things brief, I went home minus a pair of (boxer) briefs.
 15. The State competition for Minnesota is different than the others. It has no bearing on the main FRC tournaments, and in fact happens after Worlds. The reason it exists is that any Minnesota High School Sport needs a statewide competition. Teams earn points at Regionals based on matches won and awards. It is only a single day, and there are no practice matches before the qualifiers. Scouting happens remotely before the event.
-
+16. DON'T START FIRES IN YOUR HOTEL ROOM! This actually happened (Duluth 2022).
