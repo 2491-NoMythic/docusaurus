@@ -4,7 +4,7 @@ title: The Song of Motors
 authors:
   - name: Augie
     title: "[REDACTED]"
-    - name: Evelyn
+  - name: Evelyn
     title: CornerGremlin
 tags: [build season]
 ---
