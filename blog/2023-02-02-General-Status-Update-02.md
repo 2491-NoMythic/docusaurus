@@ -5,7 +5,7 @@ authors:
   - name: Augie
     title: "[REDACTED]"
   - name: Omariahn
-    title: "Maui"
+    title: Mowi
 
 tags: [build season]
 ---
