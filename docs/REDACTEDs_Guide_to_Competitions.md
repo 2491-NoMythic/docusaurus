@@ -10,10 +10,11 @@
 7. Bring more snacks than you think you need.
 8. Regionals are different from Worlds is different from State. The Regionals tend to have lower quality, and are the competition baseline. Teams can show up without much more than a drivetrain, especially in Duluth. Teams have their stuff together by Mariucci, though. Worlds is longer and more intense. There are two ways to get to worlds: being on the winning alliance at a Regional, or getting one of three specific awards (Chairman's, Engineering Inspiration, and Wild Card). Every robot there is a high-quality machine, with scores routinely double or triple that of the average regional. Any gimmick robots (example: the jumping robot at Houston 2022) will be high-quality with all the bugs in the gimmick worked out. State is complicated (see 15).
 9. If possible, acquire at least 3 team t-shirts and a sweatshirt. It makes it easier for the mentors to find you if you are wearing team colors.
-10. When on scouting duty, write the reports as if the team you are scouting would read them. 'Poor Scorer' is fine. 'Sh**ty Vacuum Cleaner' is not.
+10. When on scouting duty, write the reports as if the team you are scouting would read them. 'Poor Scorer' is fine. 'Sh**ty Vacuum Cleaner' is not. This is partly because we share our scouting data, so there is a chance that they will actually read the reports.
 11. Bring money proportional to the amount of packed lunches you dislike. Competition food is expensive. At Worlds there are food trucks, including ice-cream trucks, so bring money for those if you like ice cream. Or Italian Ice. Italian Ice is good.
 12. Talk with your room mates and make decisions on stuff like sleeping arrangements early.
 13. Keep you phone and room key in different pockets, your phone will wipe the magnet.
 14. Stay hydrated, especially in Houston. I didn't drink enough water, and to keep things brief, I went home minus a pair of (boxer) briefs.
 15. The State competition for Minnesota is different than the others. It has no bearing on the main FRC tournaments, and in fact happens after Worlds. The reason it exists is that any Minnesota High School Sport needs a statewide competition. Teams earn points at Regionals based on matches won and awards. It is only a single day, and there are no practice matches before the qualifiers. Scouting happens remotely before the event.
 16. DON'T START FIRES IN YOUR HOTEL ROOM! This actually happened (Duluth 2022).
+17. Take showers and talk to your roommates about shower rules ahead of time. You will likely have to share towels.
