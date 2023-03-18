@@ -3,7 +3,7 @@ slug: Week6
 title: Test Week 6!
 authors:
   - name: Benjamin Hang
-    title: Yours Truly TM
+    title: Yours Truly™
 tags: [swerve, test]
 ---
 ​

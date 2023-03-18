@@ -3,7 +3,7 @@ slug: BW3H
 title: Haha I'm Back
 authors:
   - name: Benjamin
-    title: Yours Truly TM
+    title: Yours Truly™
 
 tags: [build season]
 ---

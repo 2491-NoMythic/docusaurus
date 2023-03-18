@@ -3,7 +3,7 @@ slug: BW3S
 title: Two Authors Again
 authors:
   - name: Benjamin
-    title: Yours Truly TM
+    title: Yours Truly™
   - name: Augie
     title: "[REDACTED]"
 tags: [build season]
@@ -19,4 +19,5 @@ number.
 * Skiplow Subcommand (Omariahn): Making a command to run the skiplow. 
 * Endeffector Skeleton (Rowan): Starting the skeleton for the endeffector. We don't know what it's going to be yet.
 * Swerve Stuff (Royce): Swerve calibration was attempted. It didn't work.
+
 Next time, Limelight! NEXT TIME!
