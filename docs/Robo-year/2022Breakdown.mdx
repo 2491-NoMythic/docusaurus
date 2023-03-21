@@ -27,8 +27,12 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
 <details>
   <summary>Climber</summary>
   <div>
-    <div>The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors are moving in tandem to retract or extend the climber arms. We wanted to use pneumatics becuse we thought the speed and consistency of the pneumatics would be really helpful for doing fast climbs.
-  The motors are rather simple, its a simple PID loop with no kI and it is almost exclusively for autos; Otherwise, the motors were controled via the POV buttons on the PS4 controller. They have a magnetic limit switch at the bottom, preventing them from going down too far and the upward limit was predefined in the code and not controllable via the player. They have an enum designated to them to determine if they were going UP or DOWN.
+    <div>The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors move in tandem to extend or retract the climber arms. We wanted to use pneumatics becuse the speed and consistency of the pneumatics was going to be really useful for doing fast and consistent climbs.
+  The motors are a little complicated. The motors control a spool that dictates how far the arm can extend. The arm has springs that always push the arm out but the spools act like leashes and keep it from extending any more than we want it to.
+  The motor control is a PID loop with no kI and the auto control is really only used if we want to control the arm in a non-manual matter such as autos.
+  They have a magnetic limit switch at the bottom, preventing them from going down too far and the upward limit was predefined in the code and not controllable via the player.
+  Because we want to know the state of the arm so nothing runs into each other, we needed a way to find out the state of the subsystem in a fast call. To do this, we modified the control to not revolve on a TRUE/FALSE output, but rather on an ENUM that we created.
+  We created 2 different ENUMS each with their 2 different states. ArmExtendState to see if the arm is extended or retracted and ArmTipState to determine if the arm was tilted in or out. The naming convention isn't exactly the greatest... but it works for us!
 
   ```java
   package frc.robot;
@@ -37,17 +41,24 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
       DOWN,
       UP
   }
-  ```
-
-  One of the harder parts of the climber was controlling the state of the pneumatic and recieving what state it currently is in. We ended up creating an enum that had 2 values, IN and OUT so they we can look easily at what the arm is currently doing. If the Arm Tip State changed, the enum would change alongside it making it super easy to find.
-
-  ```java
-  package frc.robot;
 
   public enum ArmTipState {
       IN,
       OUT
   }
+  ```
+  We control the arm with 2 different buttons: D-PAD left and D-PAD down. D-PAD left follows a sequential command that: tilts the arm out, extends the arms, and tilts the arms up. D-PAD down just retracts the arm. We programmed it like this to automate it for the drivers and make the climbing process an easier process.
+
+  ```
+  public FullClimbPhase1(OldClimber climber, Intake intake, LightsHardware lights) {
+  ClimbLights climbLights = new ClimbLights(lights);
+  addCommands(
+    new InstantCommand(() -> { climbLights.schedule(); }),
+    new MoveArm(intake, IntakeArmState.armDown),
+    new TiltBackAndExtend(climber),
+    new ArmPneumaticTipping(climber, ArmTipState.IN)
+  );
+}
   ```
 
 </div>
