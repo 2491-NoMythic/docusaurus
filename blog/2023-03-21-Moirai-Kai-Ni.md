@@ -11,5 +11,5 @@ Today, we have Moriai again. The robot now has a (mechanically) functional intak
 * Rainbow HellLights(Me): I made a variant of the rainbow lights that should work on the robot. Or more accurately, fixed all the errors and actually implemented it in Robot Container.
 * Endeffector Testing (Royce and Rowan): The endeffector kind of works. There were a few errors, like getting the cone and cube commands reversed, but they were easily fixed.
 * Robot Documentation (Ben): Ben wrote a bunch of stuff about the 2022 robot, Janus.
-I don't know what Kai Ni actually means (based on my limited knowledge of Japanese I'm guessing something along the lines of Mark 2), I was just making a Kancolle reference.
+I don't know what Kai Ni actually means (based on my limited knowledge of Japanese I'm guessing something along the lines of Mark 2), I was just making a Kancolle reference. UPDATE: I looked up what it means. It means 'times to', which is close enough. 
 ![image](/img/20230321UhOh.jpg)
