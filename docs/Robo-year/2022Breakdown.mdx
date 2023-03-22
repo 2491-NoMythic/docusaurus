@@ -49,7 +49,7 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
   ```
   We control the arm with 2 different buttons: D-PAD left and D-PAD down. D-PAD left follows a sequential command that: tilts the arm out, extends the arms, and tilts the arms up. D-PAD down just retracts the arm. We programmed it like this to automate it for the drivers and make the climbing process an easier process.
 
-  ```
+  ```java
   public FullClimbPhase1(OldClimber climber, Intake intake, LightsHardware lights) {
   ClimbLights climbLights = new ClimbLights(lights);
   addCommands(
@@ -79,8 +79,16 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
 <details>
   <summary>Vision</summary>
   <div>
-    <div>There is not much done with the lights this time around, but there exists a limelight on the robot and it functions mainly as a drive camera. The idea was to find the pillar in the center and reorientate towards it automatically. 
-    Another unimplemented idea was using a Pixy2 to sense what color the balls were inside of our intake. It worked sort of but it was not very consistent and required constant re-calibrating. The information was put into an enum, but again, this was never fully fleshed out, but it would have been really coooooollllllllllll.
+    <div>There are 3 cameras on the robot. The limelight, a pixy, and a generic webcam. The limelight wasn't finished, but the idea was to be able to look at the center pillar and rotate to point to make scoring consistent. The pixy was implimented at home, but at competitions it went a little awry.
+  The pixy was supposed to identify the color of ball in our rollers and transmit that data to our lights. This was especially helpful if we had different colored balls in our rollers. We used an enum to dictate what kind of balls we have but the pixy was heavilly reliant on the lighting and once we made it to competition, the lighting at competiton was different than the one at home so it didn't work 
+
+  ```java
+  public enum CargoState {
+    Empty,
+    Red,
+    Blue,
+}
+  ```
 </div>
     <br/>
   </div>
@@ -89,7 +97,14 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
 <details>
   <summary>Lights</summary>
   <div>
-    <div>The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: Purple, which made them all purple; rainbow, which were some ooh ahh swirly lights; climbing, which made purple bits go upwards, and pit lights which made the robot go dim but not off to make robot surgery a little easier.</div>
+    <div>The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: 
+    <ul>
+      <li>Purple, which made them all purplee</li>
+      <li>Rainbow, which were some ooh ahh swirly lights</li>
+      <li>Climbing, which made purple bits go upwards</li>
+      <li>Pit lights which made the robot go dim but not off to make robot surgery a little easier</li>
+    </ul>
+    </div>
 </div>
     <br/>
 </details>
