@@ -5,7 +5,7 @@ authors:
   - name: Augie
     title: "[REDACTED]"
 
-tags: [build season]
+tags: [build season, specials]
 ---
 This is partially an experiment in formatting, using a bullet point list of things we did.
 
