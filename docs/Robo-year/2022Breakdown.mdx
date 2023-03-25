@@ -71,6 +71,23 @@ I can do many things! (I can't acutally do too much, but I do what I do well) I 
   <div>
     <div>The intake is another subsystem that has 1 pneumatic and 2 motors. The pneumatic would raise and lover the intake of the robot and the motors on the end would be the things spinning bars to acutally intake and outtake the cargo.
   The programming is not as complicated as some of the other subsystems. An interesting part however is that the intake could hold 2 pieces of cargo and intake/outtkake them separatly from each other. This system wasn't flawless, but it worked for the most part. To control the height of the intake, there were 2 buttons to control the pneumatic to either make the inake go up or down and similarly, there were 4 buttons for the motors: left intake, right intake, left outtake, right outtake. 
+  ```java
+  if (ps4Controller.getL2Button()) {
+      intake.leftIntake(IN_SPEED);
+    } else if (ps4Controller.getL1Button()) {
+      intake.leftIntake(OUT_SPEED);
+    } else {
+      intake.leftIntake(0);
+    }
+
+    if (ps4Controller.getR2Button()) {
+      intake.rightIntake(IN_SPEED);
+    } else if (ps4Controller.getR1Button()) {
+      intake.rightIntake(OUT_SPEED);
+    } else {
+      intake.rightIntake(0);
+    }
+  ```
 </div>
     <br/>
   </div>
