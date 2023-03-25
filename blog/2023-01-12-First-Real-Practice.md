@@ -5,7 +5,7 @@ authors:
   - name: Augie Turner
     title: "[REDACTED]"
 
-tags: [build season]
+tags: [build season, specials]
 ---
 
 Today was the first practice of the build season! We have our game, we have a plan, and we can start coding.
