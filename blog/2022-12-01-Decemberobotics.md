@@ -14,11 +14,11 @@ We also spent a lot of time struggling with imports. We can't wait to start test
 
 Quinn finished the Torbs code. He also spent time creating a slideshow to map out the PS4 buttons.
 
-Evelyn spent her time organizing the cart. Everything is super neat now. We even found the TV remote in the process!
+CornerGremlin spent her time organizing the cart. Everything is super neat now. We even found the TV remote in the process!
 
-Royce worked on swerve stuff, and Liam did a little bit of everything. 
+Captain 23 worked on swerve stuff, and Liam did a little bit of everything. 
 
-Omariahn learned how to program a controller today. Yay!
+Mowi learned how to program a controller today. Yay!
 
 Apologies for the lack of content. Closing meeting is soon. 
 Overall rating of the day: 7.5/10.

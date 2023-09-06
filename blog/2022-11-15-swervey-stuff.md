@@ -2,7 +2,7 @@
 slug: Week5
 title: Test Week 5!
 authors:
-  - name: Benjamin Hang
+  - name: Yours Truly™
     title: Yours Truly™
   - name: August Turner
     title: "[REDACTED]"
@@ -15,7 +15,7 @@ Hello! This is week five.
 
 Liam and Quinn built structure code for the Torb TEST Robot. Their take was 'stuff and things and things and stuff'.
 
-Royce made thew swerve drive work and fixed a bunch of stuff related to it. There was a very long list of things, including wheel calibration, library management, and a bunch of other stuff that I forgot.
+Captain 23 made thew swerve drive work and fixed a bunch of stuff related to it. There was a very long list of things, including wheel calibration, library management, and a bunch of other stuff that I forgot.
 
 The new kids moved on to working on robot boards. They've finally learned about staring at the code trying to find errors when everything should be working perfectly. Ben's response was 'Programming!'.
 

@@ -16,8 +16,8 @@ Oddly enough though, it's not too bad given the state of the robot. The NEOs wer
 after issue but it resolved itself. The NEOs were then hooded up to a cool prototype but I had the NEOs running at .05 speed and then 
 they were like "Lets go faster!" and so I cranked it up to 0.7 and it almost broke the prototype... SO we're still gonna play with that 
 number. 
-* Skiplow Subcommand (Omariahn): Making a command to run the skiplow. 
+* Skiplow Subcommand (Mowi): Making a command to run the skiplow. 
 * Endeffector Skeleton (Rowan): Starting the skeleton for the endeffector. We don't know what it's going to be yet.
-* Swerve Stuff (Royce): Swerve calibration was attempted. It didn't work.
+* Swerve Stuff (Captain 23): Swerve calibration was attempted. It didn't work.
 
 Next time, Limelight! NEXT TIME!
