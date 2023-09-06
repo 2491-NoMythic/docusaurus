@@ -2,7 +2,7 @@
 slug: Week6
 title: Test Week 6!
 authors:
-  - name: Benjamin Hang
+  - name: Yours Truly™
     title: Yours Truly™
 tags: [swerve, test]
 ---
@@ -24,7 +24,7 @@ On the topic of the code learners, there was a lot of learning today! Everyone i
 basic and its honestly quite amazing. Liam created this long list of them to do with random robot based challanges. This consists of 
 making a drive train, working with smartdash board and so much more.
 
-Royce and some other people now and then made some serious progess on the swerve bot, both before and during practice. There was a 
+Captain 23 and some other people now and then made some serious progess on the swerve bot, both before and during practice. There was a 
 good amount of math being done to figure out angles, but the result ended nicely. The robot is now starting to get PID tuned for 
 turning. You can point in a certain direction with the joystic and it just points that way! I am so excited for what is to happen next
 
