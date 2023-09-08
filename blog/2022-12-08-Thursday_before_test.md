@@ -2,7 +2,7 @@
 slug: Week8.1
 title: CRUNCH TIME ("Test Week 8 pt 2")
 authors:
-  - name: Benjamin Hang
+  - name: Yours Truly™
     title: "Yours Truly TM"
 
 tags: [test]
@@ -14,7 +14,7 @@ The main focus of today are the 2 TEST robots, the big day is looming around the
 
 One the 2nd half of practice came along however (aka post dinner), things really started to get in gear. From the moment we came back from dinner, the robots were put into programming session mode. TORBS and Grifons each split and had what can be essentially be called a workout session. Screams of pain and agony and people being hurt (not actually) but you know how it can be
 
-TORBS gameplan - Characterization and Feed Forward loops! How crazy! This is getting a little too close to PID tuning Royce...
+TORBS gameplan - Characterization and Feed Forward loops! How crazy! This is getting a little too close to PID tuning Captain 23...
 
 Griffons gameplan - Encoders, Encoders, and Limit switches. There's only so much more fine tuning to do. This is also getting close to PID Tuning
 
