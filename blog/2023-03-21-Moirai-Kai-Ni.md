@@ -4,7 +4,7 @@ title: Moriai Kai Ni
 authors:
   - name: Augie
     title: "[REDACTED]"
-  -name: Captain23
+  - name: Captain23
     title: Captain23
 tags: [competition season]
 ---
