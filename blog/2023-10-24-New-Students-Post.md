@@ -7,4 +7,4 @@ authors: New Programmers
 tags: [training season 2023]
 ---
 * Lorem Ipsum
-
+* Class Learning (TBF)
