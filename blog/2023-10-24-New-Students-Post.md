@@ -1,7 +1,7 @@
 ---
 slug: TW6
 title: New Students Post
-authors: New Programmers
+authors:
   - name: Griffin
     title: "Test Post"
 tags: [training season 2023]
