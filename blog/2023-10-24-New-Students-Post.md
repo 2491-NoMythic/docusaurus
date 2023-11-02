@@ -1,5 +1,5 @@
 ---
-slug: TW6
+slug: TW7
 title: New Students Post
 authors:
   - name: Griffin
