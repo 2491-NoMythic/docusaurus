@@ -10,10 +10,7 @@ tags: [build season]
 
 Haha! I'm back to the blogpost! It's Ben. The turnout today was missing Augie so I'm creating a blog in his stead. Today was some really weird shenannigans.
 
-Captain 23 and pretty much everyone else worked on updating the swerve, some old firmware and stuff nothing big, and then BAM everything 
-starts blinking Green/Yellow. This is news to us. We look up and down the CanCoder manual and there's nothing and then someone remebers
-why. It's because Pheonix Tuner is now Pheonix Pro. We need a Pheonix Pro liscense to use the motors now. Its pretty much a 
-subscription now, $100 every now and again or something. It's kinda baffeling that it's come to this now but oh well. After some 
+Captain 23 and pretty much everyone else worked on updating the swerve, some old firmware and stuff nothing big, and then BAM everything starts blinking Green/Yellow. This is news to us. We look up and down the CanCoder manual and there's nothing and then someone remebers why. It's because Pheonix Tuner is now Pheonix Pro. We need a Pheonix Pro liscense to use the motors now. Its pretty much a subscription now, $100 every now and again or something. It's kinda baffeling that it's come to this now but oh well. After some 
 careful manuvering and signing in and a bunch of other things, all of the motors work now. Yay!
 
 While this was happening there was some cool math being done by Yours Truly TM. It was a bunch of work on the double pivot arm and it
