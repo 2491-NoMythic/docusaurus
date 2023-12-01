@@ -5,7 +5,7 @@ authors:
   - name: Augie
     title: "[REDACTED]"
   - name: Davey
-     title: firebreathingrat
+     title: Firebreathingrat
 tags: [training season 2023]
 ---
 
