@@ -3,8 +3,10 @@ slug: TW7
 title: New Students Post
 authors:
   - name: Griffin
-    title: "Test Post"
+    title: "Funny Hat"
 tags: [training season 2023]
 ---
 * Lorem Ipsum
 * Class Learning (TBF)
+
+UPATE: The person who was supposed to write this forgot.
