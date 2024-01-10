@@ -1,7 +1,7 @@
 ---
 slug: 24BW1T
 title: New Year, New Game
-author:
+authors:
   - name: Augie
     title: "[REDACTED]"
   - name: Griffin

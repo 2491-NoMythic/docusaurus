@@ -1,7 +1,7 @@
 ---
 slug: TW15
 title: Safety First
-author:
+authors:
   - name: Augie
     title: "[REDACTED]"
 tags: [training season 2023]
