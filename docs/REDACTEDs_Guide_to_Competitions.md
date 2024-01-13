@@ -13,8 +13,10 @@
 10. When on scouting duty, write the reports as if the team you are scouting would read them. 'Poor Scorer' is fine. 'Sh**ty Vacuum Cleaner' is not. This is partly because we share our scouting data, so there is a chance that they will actually read the reports.
 11. Bring money proportional to the amount of packed lunches you dislike. Competition food is expensive. At Worlds there are food trucks, including ice-cream trucks, so bring money for those if you like ice cream. Or Italian Ice. Italian Ice is good.
 12. Talk with your room mates and make decisions on stuff like sleeping arrangements early.
-13. Keep you phone and room key in different pockets, your phone will wipe the magnet.
-14. Stay hydrated, especially in Houston. I didn't drink enough water, and to keep things brief, I went home minus a pair of (boxer) briefs.
+13. Keep your phone and room key in different pockets, your phone will wipe the magnet.
+14. Stay hydrated, especially in Houston. In 2022 I didn't drink enough water, and to keep things brief, I went home minus a pair of (boxer) briefs.
 15. The State competition for Minnesota is different than the others. It has no bearing on the main FRC tournaments, and in fact happens after Worlds. The reason it exists is that any Minnesota High School Sport needs a statewide competition. Teams earn points at Regionals based on matches won and awards. It is only a single day, and there are no practice matches before the qualifiers. Scouting happens remotely before the event.
 16. DON'T START FIRES IN YOUR HOTEL ROOM! This actually happened (Duluth 2022).
 17. Take showers and talk to your roommates about shower rules ahead of time. You will likely have to share towels.
+18. There is usually food left over after dinner. Take more if you are still hungry. 
+19. If you don't like sharing beds with people, bring a sleeping bag. Pillows make an acceptable matress, and dirty laundry makes an acceptable pillow. If you have enough dirty laundry to make an acceptable matress, something has gone wrong.
