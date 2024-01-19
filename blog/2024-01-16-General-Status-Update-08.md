@@ -11,4 +11,5 @@ Hello again. Various things happened today, mostly because we had the robot to w
 * Limelight Work (Xiaohan, Griffin): There was going to be limelight stuff done, but Xiaohan got called away and Griffin didn't have the knowhow. 
 * Autoshoot (Serena, Zach): Most of the math is done. In addition, there is a command for rotating the robot with the autoaim. 
 * PIXY stuff (Zach): Zach did work with object tracking and a PIXY camera. 
-So, yeah.
+
+So, yeah. 

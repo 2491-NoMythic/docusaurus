@@ -56,6 +56,27 @@ A swerve drive is made up of four modules. Each module has a wheel, two motors, 
   private StaticBrake m_brakeControl = new StaticBrake();
   private NeutralOut m_neutralControl = new NeutralOut();
 ```
+The next bit demonstrates how to get the speed, position, and rotation of the module: 
+```java
+  public SwerveModuleState getState() {
+    return new SwerveModuleState(
+        getSpeedMetersPerSecond(), getRotation());
+  }
+  public SwerveModulePosition getPosition() {
+    return new SwerveModulePosition(
+        getDriveDistanceMeters(), getRotation());
+  }
+```
+As well as the angles of the steering motor. Angles because it needs to have where it is and where it wants to be. This is when one of the variables about shows up.
+```java
+  public Rotation2d getRotation() {
+    return Rotation2d.fromRotations(MathUtil.inputModulus(m_steerMotor.getPosition().getValue(), -0.5, 0.5));
+  }
+
+  public double getTargetAngle() {
+    return m_desiredSteerAngle;
+  }
+```
 ## Problems
 
 ### Problem: My wheels are spinning randomly!
