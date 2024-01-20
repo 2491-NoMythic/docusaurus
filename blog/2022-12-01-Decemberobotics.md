@@ -9,7 +9,7 @@ tags: [swerve, test]
 ---
 
 It's week 7 of TEST, and the deadline is closing in. 
-Ben and I spent practice working on a subsytem for Griffins called Thomas, and there is not a good way to explain what that is. 
+Yours Truly™ and I spent practice working on a subsytem for Griffins called Thomas, and there is not a good way to explain what that is. 
 We also spent a lot of time struggling with imports. We can't wait to start testing on the Robot. BUILD.
 
 Quinn finished the Torbs code. He also spent time creating a slideshow to map out the PS4 buttons.

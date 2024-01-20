@@ -6,7 +6,7 @@ authors:
     title: "[REDACTED]"
   - name: Griffin
     title: "Funny Hat"
-tags: [build season 2024]
+tags: [build season 2024, limelight hell]
 ---
 This was the first Saturday practice of the season, and due to miscommunications and poor memory a bunch of people forgot to bring a lunch today. For those who don't know, while dinner is provided on Tuesdays and Thursdays, on Saturdays you bring your own lunch. Anyway, actual programming things that happened today:
 

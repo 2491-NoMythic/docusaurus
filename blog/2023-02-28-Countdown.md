@@ -4,7 +4,7 @@ title: Countdown
 authors:
   - name: Augie
     title: "[REDACTED]"
-  - name: Ben
+  - name: Yours Truly™
     title: Yours Truly™
 tags: [competition season]
 ---

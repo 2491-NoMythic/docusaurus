@@ -14,6 +14,6 @@ Outside is a snowstorm, inside is music. CornerGremlin is apparently just our mu
 For actual programming stuff that happened today:
 * Week 0 Packing (Me): I packed a box of stuff for the Week 0 group. It had laptops, charging cables, spare AprilTags, PS4 controllers, and etc. 
 * Light Work (New Trio): The light work of today involved actually planning where the lights will go. There was also wiring.
-* 'SuperSubsystem' (Ben): Ben created a subsystem example code containing all subsystems. It can work with anything, although I do wonder which specific bits would work if you hooked it up to a board.
+* 'SuperSubsystem' (Yours Truly™): Yours Truly™ created a subsystem example code containing all subsystems. It can work with anything, although I do wonder which specific bits would work if you hooked it up to a board.
 
 Don't expect anything on Thursday, in-person practice probably isn't happening due to snowstorm.

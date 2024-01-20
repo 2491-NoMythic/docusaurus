@@ -4,7 +4,7 @@ title: Driver Challenges
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [build season]
+tags: [build season, limelight hell]
 ---
 Today the intital driver tryouts occured for the season. They were using Moirai, which has been stripped down to just a drivetrain. I wasn't really involved outside of running batteries down to the gym. Anyway, other things that happened:
 * Intake finishing (Griffin and I): We finished the intake, adding all of the various methods to RobotContainer. In addition, Evan showed us how to make the triggers actually work properly and not throw unsupported exception errors as soon as we turned it on.

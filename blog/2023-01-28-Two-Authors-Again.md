@@ -2,11 +2,11 @@
 slug: BW3S
 title: Two Authors Again
 authors:
-  - name: Benjamin
+  - name: Yours Truly™jamin
     title: Yours Truly™
   - name: Augie
     title: "[REDACTED]"
-tags: [build season]
+tags: [build season, limelight hell]
 ---
 
 There are two authors again now! Things that happened today include:

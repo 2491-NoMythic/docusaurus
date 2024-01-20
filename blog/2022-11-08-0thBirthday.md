@@ -10,7 +10,7 @@ tags: [blogging]
 ---
 
 Today in programming, we got the wiki working! We started a docusaurus site and stated making pages and blogposts (like this one!)
-There was use of VSCode and the setup of node to get Docusaurus working! -Ben and Augie
+There was use of VSCode and the setup of node to get Docusaurus working! -Yours Truly™ and Augie
 
 Everyone is finally on Java! We've moved on from the circuit boards. As fun as they were it was time to move on to Java. 
 We made some cool text games and some information readers! -Rowan and CornerGremlin
