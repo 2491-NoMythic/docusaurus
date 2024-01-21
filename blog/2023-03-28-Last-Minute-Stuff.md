@@ -4,7 +4,7 @@ title: Last Minute Stuff
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [competition season]
+tags: [competition season, limelight hell]
 ---
 
 The last full-team practice before Minneapolis 2023. Things that happened today:
