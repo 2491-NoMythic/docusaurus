@@ -15,4 +15,4 @@ We were working today. We even had all of programming!
 * Endeffector polishing (Me): I modified the endeffector code so it should be able to run backwards now.
 * Motor Assignment (CornerGremlin): A bunch of spark motors have IDs now. 
 
-When I say all, I mean minus Liam. 
+When I say all, I mean minus Act of Liam. 

@@ -13,7 +13,7 @@ tags: [swerve, test]
 
 Hello! This is week five. 
 
-Liam and Quinn built structure code for the Torb TEST Robot. Their take was 'stuff and things and things and stuff'.
+Act of Liam and Quinn built structure code for the Torb TEST Robot. Their take was 'stuff and things and things and stuff'.
 
 Captain 23 made thew swerve drive work and fixed a bunch of stuff related to it. There was a very long list of things, including wheel calibration, library management, and a bunch of other stuff that I forgot.
 

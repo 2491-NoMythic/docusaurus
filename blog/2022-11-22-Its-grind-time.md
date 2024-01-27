@@ -12,7 +12,7 @@ Heya! This is week six.
 Attendance today was lower than usual, we're missing Quinn, Augie, and Ford, but we've got this!
 There is a lot to do today and even more now that there are less people.
 
-TORBS programming was done by Liam, programming off where the others left off. This includes getting a pseudo subsystem in as well as
+TORBS programming was done by Act of Liam, programming off where the others left off. This includes getting a pseudo subsystem in as well as
 a bunch of other neat additions. The TORBS team is using a rotating system to get the rings onto the pillars and making sure a motor 
 does what you want it to is always going to be a little bit of an issue.
 
@@ -21,7 +21,7 @@ drivetrain actually running as well as setting up a limit switch for the elevato
 this point other than to wait for the robot to come!
 
 On the topic of the code learners, there was a lot of learning today! Everyone is starting to get really comforable with the Java 
-basic and its honestly quite amazing. Liam created this long list of them to do with random robot based challanges. This consists of 
+basic and its honestly quite amazing. Act of Liam created this long list of them to do with random robot based challanges. This consists of 
 making a drive train, working with smartdash board and so much more.
 
 Captain 23 and some other people now and then made some serious progess on the swerve bot, both before and during practice. There was a 
