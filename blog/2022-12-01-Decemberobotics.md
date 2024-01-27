@@ -16,7 +16,7 @@ Quinn finished the Torbs code. He also spent time creating a slideshow to map ou
 
 CornerGremlin spent her time organizing the cart. Everything is super neat now. We even found the TV remote in the process!
 
-Captain 23 worked on swerve stuff, and Liam did a little bit of everything. 
+Captain 23 worked on swerve stuff, and Act of Liam did a little bit of everything. 
 
 Mowi learned how to program a controller today. Yay!
 

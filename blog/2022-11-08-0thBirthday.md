@@ -15,7 +15,7 @@ There was use of VSCode and the setup of node to get Docusaurus working! -Yours 
 Everyone is finally on Java! We've moved on from the circuit boards. As fun as they were it was time to move on to Java. 
 We made some cool text games and some information readers! -Rowan and CornerGremlin
 
-We worked on the swerve bot from the summer and we did a lot of CAN wiring. This incuded making and reassuring a CAN wiring map as well as making sure everything (and we mean everything) is wired correctly. -Liam, Captain 23, and Quinn
+We worked on the swerve bot from the summer and we did a lot of CAN wiring. This incuded making and reassuring a CAN wiring map as well as making sure everything (and we mean everything) is wired correctly. -Act of Liam, Captain 23, and Quinn
 
 Also,
 DAL A TU CUERPO ALEGRIA MACARENA!

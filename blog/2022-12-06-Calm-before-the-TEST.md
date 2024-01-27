@@ -10,7 +10,7 @@ tags: [swerve, test]
 
 It's TEST week 8, and we finally have things working. This will be the last post before the competition, unless Yours Truly™ decides to make a post on Thursday. 
 
-All of us experienced programmers spent most of practice trying to get the robots running. Each group (Captain 23 and Quinn for Torbs, Liam, Yours Truly™, and I for Griffins) encountered many errors and trials, but the robots are mostly functional. The Torbs 'bot is moving, the Griffins 'bot needs some testing, but I think I fixed the bugs. Liam wouldn't let us test without a limit swtich. 
+All of us experienced programmers spent most of practice trying to get the robots running. Each group (Captain 23 and Quinn for Torbs, Act of Liam, Yours Truly™, and I for Griffins) encountered many errors and trials, but the robots are mostly functional. The Torbs 'bot is moving, the Griffins 'bot needs some testing, but I think I fixed the bugs. Act of Liam wouldn't let us test without a limit swtich. 
 
 That was not all that happened during practice. I spent the first chunk trying to fix an error in Github/Gitbash and making a button map. Yours Truly™ helped the new students out. The others just worked on code for the robots.
 
