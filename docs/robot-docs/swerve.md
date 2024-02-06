@@ -35,19 +35,15 @@ import frc.robot.settings.Constants.DriveConstants;
 
 ### The Swerve Module
 
-A swerve drive is made up of four modules. Each module has a wheel, two motors, and an encoder. In the code, you need the motors, an encoder, and a Rotation2d. You also need a bunch of variables.
+A swerve drive is made up of four modules. Each module has a wheel, two motors, and an encoder. In the code, you need the motors, an encoder, and a Rotation2d. You also need a bunch of variables, like the steering angle and driving speed. These specific varaibles are used in the controlling bit specifically.
 ```java
   private final TalonFX m_driveMotor;
   private final TalonFX m_steerMotor;
   private final CANcoder m_steerEncoder;
   private final Rotation2d m_steerEncoderOffset;
-    /**
-   * The target wheel angle in rotations. [-.5, .5]
-   */
+
   private double m_desiredSteerAngle;
-  /**
-   * The target wheel speed in rotations per second
-   */
+
   private double m_desiredDriveSpeed;
 
   private VelocityDutyCycle m_driveControl = new VelocityDutyCycle(0);
@@ -67,7 +63,7 @@ The next bit demonstrates how to get the speed, position, and rotation of the mo
         getDriveDistanceMeters(), getRotation());
   }
 ```
-As well as the angles of the steering motor. Angles because it needs to have where it is and where it wants to be. This is when one of the variables about shows up.
+As well as the angles of the steering motor. Angles because it needs to have where it is and where it wants to be. This is when one of the variables above shows up.
 ```java
   public Rotation2d getRotation() {
     return Rotation2d.fromRotations(MathUtil.inputModulus(m_steerMotor.getPosition().getValue(), -0.5, 0.5));
@@ -77,6 +73,47 @@ As well as the angles of the steering motor. Angles because it needs to have whe
     return m_desiredSteerAngle;
   }
 ```
+This section of code shows how to get the actual speed and velocity. As usual, this is divided between the current state and the target state. It also has the distance of the drive motor, which is very helpful for autonomous. 
+```java
+  public double getTargetSpeedMetersPerSecond() {
+    return m_desiredDriveSpeed;
+  }
+
+  public double getSpeedMetersPerSecond() {
+    return (m_driveMotor.getVelocity().getValue() * DriveConstants.DRIVETRAIN_ROTATIONS_TO_METERS);
+  }
+
+  public double getDriveDistanceMeters() {
+    return (m_driveMotor.getPosition().getValue() * DriveConstants.DRIVETRAIN_ROTATIONS_TO_METERS);
+  }
+```
+The last part is the code that actually gives all of the targets. It also optimizes the reference state to avoid spinning further than 90 degrees.
+```java
+  public void setDesiredState(SwerveModuleState desiredState) {
+
+    if (desiredState.angle == null) {
+      DriverStation.reportWarning("Cannot set module angle to null.", true);
+    }
+    SwerveModuleState state =
+    SwerveModuleState.optimize(desiredState, getRotation());
+
+    m_desiredSteerAngle = MathUtil.inputModulus(state.angle.getRotations(), -0.5, 0.5);
+    m_desiredDriveSpeed = state.speedMetersPerSecond / DriveConstants.DRIVETRAIN_ROTATIONS_TO_METERS;
+
+    if (Math.abs(m_desiredDriveSpeed) <= 0.001) {
+      m_driveMotor.setControl(m_neutralControl);
+      m_steerMotor.setControl(m_steerControl.withPosition(m_desiredSteerAngle));
+    } else {
+      m_driveMotor.setControl(m_driveControl.withVelocity(m_desiredDriveSpeed).withFeedForward(m_desiredDriveSpeed/DriveConstants.MAX_VELOCITY_RPS_EMPIRICAL));
+      m_steerMotor.setControl(m_steerControl.withPosition(m_desiredSteerAngle));
+    }
+  }
+```
+One important thing to know is that for this part specifically, the rule about not copy-pasting anything you don't know the function of doesn't quite apply.
+### Drivetrain
+
+### Required Constants
+[Here](SwerveConstants) is the list of the constants required to get this working. It is in a seperate page because the list is very very long.
 ## Problems
 
 ### Problem: My wheels are spinning randomly!
