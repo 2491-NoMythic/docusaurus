@@ -5,7 +5,7 @@ authors:
   - name: Augie
     title: "[REDACTED]"
   - name: Zach
-    title: TBD
+    title: zero22
 tags: [build season]
 ---
 Hello again. The weather is unreasonably warm for winter in Minnesota, regularly hitting the 40s. I just hope there is snow again. Anyway, things that were done today:
