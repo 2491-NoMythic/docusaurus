@@ -10,7 +10,7 @@ Swerve is annoying to make. It requires a gyroscope, as without it the robot can
 
 ## Components
 
-### The Import List
+### Swerve Module - Imports
 
 This assumes you are using Phoenixes, we will eventually update with Kraken code.
 ```java
@@ -33,7 +33,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.settings.Constants.DriveConstants;
 ```
 
-### The Swerve Module
+### Swerve Module
 
 A swerve drive is made up of four modules. Each module has a wheel, two motors, and an encoder. In the code, you need the motors, an encoder, and a Rotation2d. You also need a bunch of variables, like the steering angle and driving speed. These specific varaibles are used in the controlling bit specifically.
 ```java
@@ -110,8 +110,109 @@ The last part is the code that actually gives all of the targets. It also optimi
   }
 ```
 One important thing to know is that for this part specifically, the rule about not copy-pasting anything you don't know the function of doesn't quite apply.
+### Drivetrain - Imports
+
+Please do not just copy-paste, your code might have something else. 
+``` java 
+import static frc.robot.settings.Constants.DriveConstants.BL_DRIVE_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.BL_STEER_ENCODER_ID;
+import static frc.robot.settings.Constants.DriveConstants.BL_STEER_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.BR_DRIVE_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.BR_STEER_ENCODER_ID;
+import static frc.robot.settings.Constants.DriveConstants.BR_STEER_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.CANIVORE_DRIVETRAIN;
+import static frc.robot.settings.Constants.DriveConstants.DRIVETRAIN_PIGEON_ID;
+import static frc.robot.settings.Constants.DriveConstants.DRIVE_ODOMETRY_ORIGIN;
+import static frc.robot.settings.Constants.DriveConstants.FL_DRIVE_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.FL_STEER_ENCODER_ID;
+import static frc.robot.settings.Constants.DriveConstants.FL_STEER_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.FR_DRIVE_MOTOR_ID;
+import static frc.robot.settings.Constants.DriveConstants.FR_STEER_ENCODER_ID;
+import static frc.robot.settings.Constants.DriveConstants.FR_STEER_MOTOR_ID;
+import static frc.robot.settings.Constants.ShooterConstants.OFFSET_MULTIPLIER;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Optional;
+
+import javax.swing.text.html.Option;
+
+import com.ctre.phoenix6.hardware.Pigeon2;
+import com.pathplanner.lib.commands.PathPlannerAuto;
+import com.pathplanner.lib.util.PathPlannerLogging;
+
+import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Translation2d;
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
+import edu.wpi.first.math.kinematics.SwerveModulePosition;
+import edu.wpi.first.math.kinematics.SwerveModuleState;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
+import edu.wpi.first.wpilibj.Preferences;
+import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.LimelightHelpers;
+import frc.robot.settings.Constants;
+import frc.robot.settings.LimelightValues;
+import frc.robot.settings.Constants.CTREConfigs;
+import frc.robot.settings.Constants.Vision;
+import frc.robot.settings.Constants.DriveConstants.Offsets;
+import frc.robot.settings.Constants.DriveConstants.Positions;
+```
 ### Drivetrain
 
+The first step is to create a set of CTRE Configs and Kinematics, arrays for the
+### CTRE Configs
+
+The Company CTRE has a large amount of things one can do with the Talon's integrated motor controllers and other things the company makes. All of these are extremely important for swerve. These should probably go in Constants. The first chunk makes configurations that can be implemented. (The brackets have matches at the bottom.)
+```java
+public static final class CTREConfigs {
+  public TalonFXConfiguration driveMotorConfig;
+  public TalonFXConfiguration steerMotorConfig;
+  public CANcoderConfiguration steerEncoderConfig;
+  public Pigeon2Configuration pigeon2Config;
+
+  public CTREConfigs() {
+      driveMotorConfig = new TalonFXConfiguration();
+      steerMotorConfig = new TalonFXConfiguration();
+      steerEncoderConfig = new CANcoderConfiguration();
+      pigeon2Config = new Pigeon2Configuration();
+```
+Each of the following sections is a specific configuration. This one is the steering motor:
+```java
+      steerMotorConfig.Feedback.RotorToSensorRatio = 1/DriveConstants.DRIVETRAIN_STEER_REDUCTION;
+      steerMotorConfig.MotorOutput.Inverted = DriveConstants.DRIVETRAIN_STEER_INVERTED;
+      steerMotorConfig.Slot0.kP = DriveConstants.k_STEER_P;
+      steerMotorConfig.Slot0.kI = DriveConstants.k_STEER_I;
+      steerMotorConfig.Slot0.kD = DriveConstants.k_STEER_D;
+      steerMotorConfig.Slot0.kS = DriveConstants.k_STEER_FF_S;
+      steerMotorConfig.Slot0.kV = DriveConstants.k_STEER_FF_V;
+      steerMotorConfig.Voltage.PeakForwardVoltage = 12;
+      steerMotorConfig.Voltage.PeakReverseVoltage = -12;
+      steerMotorConfig.Feedback.FeedbackSensorSource = FeedbackSensorSourceValue.RemoteCANcoder;
+      steerMotorConfig.ClosedLoopGeneral.ContinuousWrap = true;
+```
+This the drive motor:
+```java
+      driveMotorConfig.Feedback.SensorToMechanismRatio = 1/DriveConstants.DRIVETRAIN_DRIVE_REDUCTION;
+      driveMotorConfig.MotorOutput.Inverted = DriveConstants.DRIVETRAIN_DRIVE_INVERTED;
+      driveMotorConfig.MotorOutput.DutyCycleNeutralDeadband = 0.0;
+      driveMotorConfig.ClosedLoopRamps.DutyCycleClosedLoopRampPeriod = DriveConstants.DRIVE_MOTOR_RAMP;
+      driveMotorConfig.Slot0.kP = DriveConstants.k_DRIVE_P;
+      driveMotorConfig.Slot0.kI = DriveConstants.k_DRIVE_I;
+      driveMotorConfig.Slot0.kD = DriveConstants.k_DRIVE_D;
+      driveMotorConfig.Slot0.kS = DriveConstants.k_DRIVE_FF_S;
+      driveMotorConfig.Slot0.kV = DriveConstants.k_DRIVE_FF_V;
+      driveMotorConfig.Voltage.PeakForwardVoltage = 12;
+      driveMotorConfig.Voltage.PeakReverseVoltage = -12;
+      driveMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
+```
 ### Required Constants
 [Here](SwerveConstants) is the list of the constants required to get this working. It is in a seperate page because the list is very very long.
 ## Problems
