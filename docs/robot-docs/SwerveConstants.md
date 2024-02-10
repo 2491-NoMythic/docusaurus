@@ -1,5 +1,25 @@
 Hello! Here is the list of constants to use with swerve. If you have no idea what this is, go back and read the Swerve page. Make sure to measure things and put in your own numbers after all of these. It is why there are no = signs.
 ```java
+public static final double ALLOWED_ERROR;
+    public enum Positions{
+      FL(0),
+      FR(0.25),
+      BL(0.5),
+      BR(0.75);
+
+      private double rotation;
+
+      Positions(double value) {
+        rotation = value;
+
+      }
+      public double getValue() {
+        return rotation;
+      }
+    }
+```
+This section should be inside its own (){} thing.
+```java
  public static final Pose2d DRIVE_ODOMETRY_ORIGIN = new Pose2d(Stuff);
     /**
      * The bumper-to-bumper width of the robot.
