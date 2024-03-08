@@ -20,3 +20,5 @@
 17. Take showers and talk to your roommates about shower rules ahead of time. You will likely have to share towels.
 18. There is usually food left over after dinner. Take more if you are still hungry. 
 19. If you don't like sharing beds with people, bring a sleeping bag. Pillows make an acceptable matress, and dirty laundry makes an acceptable pillow. If you have enough dirty laundry to make an acceptable matress, something has gone wrong.
+20. Also bring a sleeping bag if you are on a couch. Pullout or otherwise, they don't come with bedding.
+21. Either bring something to soothe your throat or hearing protection, depending on if you want to scream out cheers or plug your ears because the rest of the team is trying to get the Loudest- sorry, I meant the Team Spirit Award. 
