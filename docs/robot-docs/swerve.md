@@ -4,6 +4,10 @@
 
 Swerve drive, or swerve, is a type of drivetrain. It has one wheel in each corner of the robot. Each wheel is controlled by two motors, one for driving and one for steering. This allows the robot to turn in place and drive while facing in any direction. Unlike most hyper-mobile drivetrains, it can and should use high-traction wheels, giving it phenomenal pushing power. It has the pushing power of tank drive combined with the mobility of mecanum drive. However, it does have significant downsides, mostly in power issues, cost (both in time and money), and programming issues.
 
+## Why Is This Good?
+
+Swerve drive has a number of benefits, both obvious and unobvious. The obvious ones are metioned above: high speed and high manuverability without sacrifices to either. A slighty less obvious benefit is connected to that mobility, and more specifically the rotation. The robot is able to move in a direction while pointing in another, allowing for extreme precision during shooter games. The least obvious benefit is simply the amount of things the prereqs allow. Just getting the wheels moving in the same direction requires a gyroscope and field map, which can easily be paired with a limelight for extreme degrees of autonomy. 
+
 ## Prerequisites
 
 Swerve is annoying to make. It requires a gyroscope, as without it the robot cannot tell which way it is facing. It needs eight motors all synchronized to each other, PID loops to keep the drive motors moving at about the same speed, and more code to make sure everything is pointing the right direction if the robot wants to turn. Here is how to make some of that.
@@ -12,7 +16,6 @@ Swerve is annoying to make. It requires a gyroscope, as without it the robot can
 
 ### Swerve Module - Imports
 
-This assumes you are using Phoenixes, we will eventually update with Kraken code.
 ```java
 import com.ctre.phoenix6.configs.CANcoderConfiguration;
 import com.ctre.phoenix6.configs.TalonFXConfiguration;
@@ -167,7 +170,95 @@ import frc.robot.settings.Constants.DriveConstants.Positions;
 ```
 ### Drivetrain
 
-The first step is to create a set of CTRE Configs and Kinematics, arrays for the
+The first step is to create a set of CTRE Configs and Kinematics, arrays for the swerve modules and rotations, and some field stuff. I'm leaving the numbers here because these ones specifically don't matter that much. 
+```java
+public static final CTREConfigs ctreConfig = new CTREConfigs();
+	public SwerveDriveKinematics kinematics = DriveConstants.kinematics;
+
+	private final Pigeon2 pigeon = new Pigeon2(DRIVETRAIN_PIGEON_ID, CANIVORE_DRIVETRAIN);
+
+	/**
+	 * These are our modules. We initialize them in the constructor.
+	 * 0 = Front Left
+	 * 1 = Front Right
+	 * 2 = Back Left
+	 * 3 = Back Right
+	 */
+	private final SwerveModule[] modules;
+	private final Rotation2d[] lastAngles;
+	private int accumulativeLoops;
+
+	private final SwerveDrivePoseEstimator odometer;
+	private final Field2d m_field = new Field2d();
+
+  	Limelight limelight; //This is optional, but helpful.
+```
+Then we have the constructer. This first part has the array, field, offset, and limelight setup. Offsets are actually a thing that haven't been mentioned yet. Because of how humans work and the way serve modules are built, it is basically impossible to have every single robot naturally be both at 0 rotations and facing forwards. Offsets are how much from zero the steer motor has to be offset. 
+```java
+public DrivetrainSubsystem() {
+		this.limelight=Limelight.getInstance();
+
+		Preferences.initDouble("FL offset", 0);
+		Preferences.initDouble("FR offset", 0);
+		Preferences.initDouble("BL offset", 0);
+		Preferences.initDouble("BR offset", 0);
+		PathPlannerLogging.setLogActivePathCallback((poses) -> m_field.getObject("path").setPoses(poses));
+		SmartDashboard.putData("Field", m_field);
+		SmartDashboard.putBoolean("Vision/force use limelight", false);
+		modules = new SwerveModule[4];
+		lastAngles = new Rotation2d[] {new Rotation2d(), new Rotation2d(), new Rotation2d(), new Rotation2d()}; // manually make empty angles to avoid null errors.
+```
+The next step is to make all of the modules and the Pose Estimator. The pose estimator is the thing that lets the code and robot know what way the wheels are pointing, where the robot is pointing, and where the robot is.
+```java
+modules[0] = new SwerveModule(
+			"FL",
+			FL_DRIVE_MOTOR_ID,
+			FL_STEER_MOTOR_ID,
+			FL_STEER_ENCODER_ID,
+			Rotation2d.fromRotations(Preferences.getDouble("FL offset", 0)),
+			CANIVORE_DRIVETRAIN);
+		modules[1] = new SwerveModule(
+			"FR",
+			FR_DRIVE_MOTOR_ID,
+			FR_STEER_MOTOR_ID,
+			FR_STEER_ENCODER_ID,
+			Rotation2d.fromRotations(Preferences.getDouble("FR offset", 0)),
+			CANIVORE_DRIVETRAIN);
+		modules[2] = new SwerveModule(
+			"BL",
+			BL_DRIVE_MOTOR_ID,
+			BL_STEER_MOTOR_ID,
+			BL_STEER_ENCODER_ID,
+			Rotation2d.fromRotations(Preferences.getDouble("BL offset", 0)),
+			CANIVORE_DRIVETRAIN);
+		modules[3] = new SwerveModule(
+			"BR",
+			BR_DRIVE_MOTOR_ID,
+			BR_STEER_MOTOR_ID,
+			BR_STEER_ENCODER_ID,
+			Rotation2d.fromRotations(Preferences.getDouble("BR offset", 0)),
+			CANIVORE_DRIVETRAIN);
+		
+		odometer = new SwerveDrivePoseEstimator(
+			kinematics, 
+			getGyroscopeRotation(),
+			getModulePositions(),
+			DRIVE_ODOMETRY_ORIGIN);
+		}
+```
+The next bit resets what the gyro thinks is 0 degrees.
+```java 
+public void zeroGyroscope() {
+		if(DriverStation.getAlliance().isPresent() && DriverStation.getAlliance().get() == Alliance.Red) {
+			zeroGyroscopeTo(180);
+		} else {
+			zeroGyroscopeTo(0);
+		}
+	}
+	public void zeroGyroscopeTo(double angleDeg) {
+		resetOdometry(new Pose2d(getPose().getTranslation(), Rotation2d.fromDegrees(angleDeg)));
+	}
+```
 ### CTRE Configs
 
 The Company CTRE has a large amount of things one can do with the Talon's integrated motor controllers and other things the company makes. All of these are extremely important for swerve. These should probably go in Constants. The first chunk makes configurations that can be implemented. (The brackets have matches at the bottom.)
