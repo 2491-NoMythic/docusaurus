@@ -1,5 +1,5 @@
 ---
-slug: 24CW5T
+slug: 24CW5W
 title: Snowed Out
 authors:
   - name: Griffin
