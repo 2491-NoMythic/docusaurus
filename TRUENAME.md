@@ -6,4 +6,4 @@ Liam is Act of Liam. This came about after he left programming and became captai
 Augie is "[REDACTED]". Hello!
 Davey is Firebreathingrat. This is apparently just their usual online name. 
 Griffin is "Funny Hat". He chose this name, although I helped recommend it. 
-Rowan 
+Rowan is sport. He chose this name. 
