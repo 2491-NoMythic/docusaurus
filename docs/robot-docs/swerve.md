@@ -14,6 +14,8 @@ Swerve is annoying to make. It requires a gyroscope, as without it the robot can
 
 ## Components
 
+This method of making swerve is built with Phoenix and Kraken motors, uses Java as the programming language, and uses a command-based framework. If you are not using these, treat this as more guidelines for building your own swerve. It uses four files: the Constants file (which also contains the CTRE configs), a Swerve Module file for the code for the individual swerve modules, a Drivetrain file for the actual drivetrain subsystem, and a Drive command. 
+
 ### Swerve Module - Imports
 
 ```java
@@ -76,6 +78,15 @@ As well as the angles of the steering motor. Angles because it needs to have whe
     return m_desiredSteerAngle;
   }
 ```
+This part finds the motor offset: how much the steer motor needs to be offset from 0 to drive in a straight line. The other method is to manually position every motor offset of every module you make and then put them in as constants. 
+```java
+public double findOffset() {
+    return MathUtil.inputModulus(
+      (m_steerEncoder.getPosition().getValue()+m_steerEncoderOffset.getRotations()),
+      -0.5,
+      0.5);
+  }
+```
 This section of code shows how to get the actual speed and velocity. As usual, this is divided between the current state and the target state. It also has the distance of the drive motor, which is very helpful for autonomous. 
 ```java
   public double getTargetSpeedMetersPerSecond() {
@@ -88,6 +99,16 @@ This section of code shows how to get the actual speed and velocity. As usual, t
 
   public double getDriveDistanceMeters() {
     return (m_driveMotor.getPosition().getValue() * DriveConstants.DRIVETRAIN_ROTATIONS_TO_METERS);
+  }
+```
+These functions are useful for
+```java
+  public TalonFX getDriveMotor(){
+    return m_driveMotor;
+  }
+
+  public TalonFX getSteerMotor(){
+    return m_steerMotor;
   }
 ```
 The last part is the code that actually gives all of the targets. It also optimizes the reference state to avoid spinning further than 90 degrees.
@@ -141,8 +162,6 @@ import java.util.Optional;
 import javax.swing.text.html.Option;
 
 import com.ctre.phoenix6.hardware.Pigeon2;
-import com.pathplanner.lib.commands.PathPlannerAuto;
-import com.pathplanner.lib.util.PathPlannerLogging;
 
 import edu.wpi.first.math.estimator.SwerveDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
@@ -193,7 +212,7 @@ public static final CTREConfigs ctreConfig = new CTREConfigs();
 
   	Limelight limelight; //This is optional, but helpful.
 ```
-Then we have the constructer. This first part has the array, field, offset, and limelight setup. Offsets are actually a thing that haven't been mentioned yet. Because of how humans work and the way serve modules are built, it is basically impossible to have every single robot naturally be both at 0 rotations and facing forwards. Offsets are how much from zero the steer motor has to be offset. 
+Then we have the constructor. This first part has the array, field, offset, and limelight setup. Offsets are actually a thing that haven't been mentioned yet. Because of how humans work and the way serve modules are built, it is basically impossible to have every single robot naturally be both at 0 rotations and facing forwards. Offsets are how much from zero the steer motor has to be offset. 
 ```java
 public DrivetrainSubsystem() {
 		this.limelight=Limelight.getInstance();
@@ -259,6 +278,175 @@ public void zeroGyroscope() {
 		resetOdometry(new Pose2d(getPose().getTranslation(), Rotation2d.fromDegrees(angleDeg)));
 	}
 ```
+This segment is a giant list of things that the robot needs to get. It should be noted that getHeadingLooped gets the heading out of 360 rather than the accumulative heading. 
+```java
+public double getHeadingLooped() {
+		accumulativeLoops = (int) (getHeadingDegrees()/180); //finding the amount of times that 360 goes into the heading, as an int
+		return getHeadingDegrees()-180*(accumulativeLoops); 
+	}
+	public Rotation2d getGyroscopeRotation() {
+		return pigeon.getRotation2d();
+	}
+	public Rotation2d getOdometryRotation() {
+		return odometer.getEstimatedPosition().getRotation();
+	}
+	public double getHeadingDegrees() {
+		return odometer.getEstimatedPosition().getRotation().getDegrees();
+	}
+	public ChassisSpeeds getChassisSpeeds() {
+		return kinematics.toChassisSpeeds(getModuleStates());
+	}
+```
+This section is how the swerve modules are used. It gets the positions and states of the modules (using arrays to apply to all of them at once) and sets the offsets (see earlier).
+```java
+	public SwerveModulePosition[] getModulePositions() {
+		SwerveModulePosition[] positions = new SwerveModulePosition[4];
+		for (int i = 0; i < 4; i++) positions[i] = modules[i].getPosition();
+		return positions;
+	}
+	public SwerveModuleState[] getModuleStates() {
+		SwerveModuleState[] states = new SwerveModuleState[4];
+		for (int i = 0; i < 4; i++) states[i] = modules[i].getState();
+		return states;
+	}
+	public void setEncoderOffsets() {
+		Preferences.setDouble("FL offset", modules[0].findOffset());
+		Preferences.setDouble("FR offset", modules[1].findOffset());
+		Preferences.setDouble("BL offset", modules[2].findOffset());
+		Preferences.setDouble("BR offset", modules[3].findOffset());
+	}
+```
+This part gets and resets the pose and gyroscope.
+```java
+	public Pose2d getPose() {
+		return odometer.getEstimatedPosition();
+	}
+    public void resetOdometry(Pose2d pose) {
+		odometer.resetPosition(getGyroscopeRotation(), getModulePositions(), pose);
+    }
+```
+Next we have the giant list of functions that actually lets one drive the robot. pointWheelsForward sets the speed and rotation of the modules to 0. pointWheelsInward does a similar thing, but instead of setting all of the wheels forward it points them all towards the center of the robot. This is very useful as a demonstration tool for potential team members to get across why we use swerve drive. Drive is what actually makes the robot drive, setting all of the module states. Stop just turns everything off without reseting the wheel directions. 
+```java
+	public void pointWheelsForward() {
+		for (int i = 0; i < 4; i++) {
+			setModule(i, new SwerveModuleState(0, new Rotation2d()));
+		}
+	}
+	public void pointWheelsInward() {
+		setModule(0, new SwerveModuleState(0, Rotation2d.fromDegrees(-135)));
+		setModule(1, new SwerveModuleState(0, Rotation2d.fromDegrees(135)));
+		setModule(2, new SwerveModuleState(0, Rotation2d.fromDegrees(-45)));
+		setModule(3, new SwerveModuleState(0, Rotation2d.fromDegrees(45)));
+	}
+	public void drive(ChassisSpeeds chassisSpeeds) {
+
+		SwerveModuleState[] desiredStates = kinematics.toSwerveModuleStates(ChassisSpeeds.discretize(chassisSpeeds, 0.02));
+		double maxSpeed = Collections.max(Arrays.asList(desiredStates)).speedMetersPerSecond;
+		if (maxSpeed <= DriveConstants.DRIVE_DEADBAND_MPS) {
+			for (int i = 0; i < 4; i++) {
+				stop();
+			}
+		} else {
+			setModuleStates(desiredStates);
+		}
+	}
+	/**
+	 * Sets all module drive speeds to 0, but leaves the wheel angles where they were.
+	 */
+	public void stop() {
+		for (int i = 0; i < 4; i++) {
+			modules[i].setDesiredState(new SwerveModuleState(0, lastAngles[i]));
+		}
+	}
+```
+This part sets the swerve module states. I'm not sure why these functions are after their use cases in the code, but they are. 
+```java
+public void setModuleStates(SwerveModuleState[] desiredStates) {
+		SwerveDriveKinematics.desaturateWheelSpeeds(desiredStates, DriveConstants.MAX_VELOCITY_METERS_PER_SECOND);
+		for (int i = 0; i < 4; i++) {
+			setModule(i, desiredStates[i]);
+		}
+	}
+	private void setModule(int i, SwerveModuleState desiredState) {
+		modules[i].setDesiredState(desiredState);
+		lastAngles[i] = desiredState.angle;
+	}
+```
+This section updates the odometry, either from vision pose or Apriltags. 
+```java
+public void updateOdometry() {
+		odometer.updateWithTime(Timer.getFPGATimestamp(), getGyroscopeRotation(), getModulePositions());
+	}
+	/**
+	 * Provide the odometry a vision pose estimate, only if there is a trustworthy pose available.
+	 * <p>
+	 * Each time a vision pose is supplied, the odometry pose estimation will change a little, 
+	 * larger pose shifts will take multiple calls to complete.
+	 */
+	public void updateOdometryWithVision() {
+		PoseEstimate estimate = limelight.getTrustedPose(getPose());
+		if (estimate != null) {
+			odometer.addVisionMeasurement(new Pose2d(estimate.pose.getTranslation(), getOdometryRotation()), estimate.timestampSeconds);
+			RobotState.getInstance().LimelightsUpdated = true;
+		} else {
+			RobotState.getInstance().LimelightsUpdated = false;
+		}
+	}
+	/**
+	 * Set the odometry using the current apriltag estimate, disregarding the pose trustworthyness.
+	 * <p>
+	 * You only need to run this once for it to take effect.
+	 */
+	public void forceUpdateOdometryWithVision() {
+		PoseEstimate estimate = limelight.getValidPose();
+		if (estimate != null) {
+			resetOdometry(estimate.pose);
+		} else {
+			System.err.println("No valid limelight estimate to reset from. (Drivetrain.forceUpdateOdometryWithVision)");
+		}
+	}
+```
+These last chunks are all in the Periodic method. 
+```java
+	@Override
+	public void periodic() {
+		if (DriverStation.getAlliance().isPresent()) {
+			SmartDashboard.putString("alliance:", DriverStation.getAlliance().get().toString());
+		}
+		updateOdometry();
+		if (Preferences.getBoolean("Use Limelight", false)) {
+			if (SmartDashboard.getBoolean("Vision/force use limelight", false)) {
+				forceUpdateOdometryWithVision();
+			} else {
+				updateOdometryWithVision();
+			}
+		} else {
+			RobotState.getInstance().LimelightsUpdated = false;
+		}
+	
+		m_field.setRobotPose(odometer.getEstimatedPosition());
+        SmartDashboard.putNumber("Robot Angle", getOdometryRotation().getDegrees());
+        SmartDashboard.putString("Robot Location", getPose().getTranslation().toString());
+		SmartDashboard.putNumber("TESTING robot angle difference", getSpeakerAngleDifference());
+		if (getSpeakerAngleDifference()<DriveConstants.ALLOWED_ERROR) {
+			runsValid++;
+		} else {
+			runsValid = 0;
+		}
+```
+This part is still in periodic. It's for data logging and keeping track of numbers. 
+```java
+		for (int i = 0; i < 4; i++) {
+			motorLoggers[i].log(modules[i].getDriveMotor());
+		}
+		SmartDashboard.putNumber("DRIVETRAIN/forward speed", getChassisSpeeds().vxMetersPerSecond);
+		SmartDashboard.putNumber("DRIVETRAIN/rotational speed", Math.toDegrees(getChassisSpeeds().omegaRadiansPerSecond));
+		SmartDashboard.putNumber("DRIVETRAIN/gyroscope rotation degrees", getPose().getRotation().getDegrees());
+		for (int i = 0; i < 4; i++) {
+			motorLoggers[i].log(modules[i].getDriveMotor());
+		}
+	}
+```
 ### CTRE Configs
 
 The Company CTRE has a large amount of things one can do with the Talon's integrated motor controllers and other things the company makes. All of these are extremely important for swerve. These should probably go in Constants. The first chunk makes configurations that can be implemented. (The brackets have matches at the bottom.)
@@ -304,9 +492,104 @@ This the drive motor:
       driveMotorConfig.Voltage.PeakReverseVoltage = -12;
       driveMotorConfig.MotorOutput.NeutralMode = NeutralModeValue.Brake;
 ```
+The steering encoder and pigeon also have some:
+```java
+      //  Steer encoder.
+      steerEncoderConfig.MagnetSensor.AbsoluteSensorRange = AbsoluteSensorRangeValue.Signed_PlusMinusHalf;
+
+      // Pigeon 2.
+      pigeon2Config.MountPose.MountPosePitch = 0;
+      pigeon2Config.MountPose.MountPoseRoll = 0;
+      pigeon2Config.MountPose.MountPoseYaw = 0;
+  }
+}
+```
 ### Required Constants
 [Here](SwerveConstants) is the list of the constants required to get this working. It is in a seperate page because the list is very very long.
+
+### The Drive Command - Imports
+
+```java
+package frc.robot.commands;
+
+import java.util.function.BooleanSupplier;
+import java.util.function.DoubleSupplier;
+
+import edu.wpi.first.math.kinematics.ChassisSpeeds;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.settings.Constants.DriveConstants;
+import frc.robot.subsystems.DrivetrainSubsystem;
+```
+
+### The Drive Command
+This is the command that actually lets us drive the robot. The first bit just makes the suppliers needed and sets up a drivetrain for it to call. Normal class stuff.
+```java
+public class Drive extends Command {
+    private final DrivetrainSubsystem drivetrain;
+    private final BooleanSupplier robotCentricMode;
+    private final DoubleSupplier translationXSupplier;
+    private final DoubleSupplier translationYSupplier;
+    private final DoubleSupplier rotationSupplier;
+    private int invert;
+```
+Then we have the constructor, which does normal command constructor things like adding requirements.
+```java
+    public Drive(DrivetrainSubsystem drivetrainSubsystem,
+    BooleanSupplier robotCentricMode,
+    DoubleSupplier translationXSupplier,
+    DoubleSupplier translationYSupplier,
+    DoubleSupplier rotationSupplier) {
+        this.drivetrain = drivetrainSubsystem;
+        this.robotCentricMode = robotCentricMode;
+        this.translationXSupplier = translationXSupplier;
+        this.translationYSupplier = translationYSupplier;
+        this.rotationSupplier = rotationSupplier;
+        addRequirements(drivetrainSubsystem);
+    }
+```
+The Execute method has three parts. The first is only here because the first year this was disassembled we had an asymetrical field. It inverts the motors depending on the alliance. 
+```java
+    @Override
+    public void execute() {
+        // You can use `new ChassisSpeeds(...)` for robot-oriented movement instead of field-oriented movement
+        if(DriverStation.getAlliance().get() == Alliance.Red) {
+            invert = -1;
+        } else {
+            invert = 1;
+        }
+```
+The second and third parts are basically the same, and handle the actual driving part. One works when the robot is in robot-centric mode, the other works when the robot is in field-centric mode. 
+```java
+if (robotCentricMode.getAsBoolean()) {
+            drivetrain.drive(new ChassisSpeeds(
+                translationXSupplier.getAsDouble() * DriveConstants.MAX_VELOCITY_METERS_PER_SECOND * invert,
+                translationYSupplier.getAsDouble() * DriveConstants.MAX_VELOCITY_METERS_PER_SECOND * invert,
+                rotationSupplier.getAsDouble() * DriveConstants.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
+            ));
+        } else {
+            drivetrain.drive(
+                ChassisSpeeds.fromFieldRelativeSpeeds(
+                    translationXSupplier.getAsDouble() * DriveConstants.MAX_VELOCITY_METERS_PER_SECOND * invert,
+                    translationYSupplier.getAsDouble() * DriveConstants.MAX_VELOCITY_METERS_PER_SECOND * invert,
+                    rotationSupplier.getAsDouble() * DriveConstants.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND,
+                    drivetrain.getPose().getRotation()
+                )
+            );
+        }
+    }
+```
+Finally, the end method just turns everything off. And now you know how to code a swerve drive, have fun!
+```java
+    @Override
+    public void end(boolean interrupted) {
+        drivetrain.drive(new ChassisSpeeds(0.0, 0.0, 0.0));
+    }
+}
+```
+
 ## Problems
 
 ### Problem: My wheels are spinning randomly!
-This issue shows up a lot whenever new swerve modules show up. One possible cause has to do with inversions - done improperly, inverting the modules will also invert the PID loop, causing it to make the modules as unsynched as possible. 
+This issue shows up a lot whenever new swerve modules show up. One possible cause has to do with inversions - done improperly, inverting the modules will also invert the PID loop, causing it to make the modules as unsynched as possible. This is very funny, and also pretty easy to fix. Just double check where the inversion is occuring. 
