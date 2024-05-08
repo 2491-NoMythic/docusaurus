@@ -22,3 +22,4 @@
 19. If you don't like sharing beds with people, bring a sleeping bag. Pillows make an acceptable matress, and dirty laundry makes an acceptable pillow. If you have enough dirty laundry to make an acceptable matress, something has gone wrong.
 20. Also bring a sleeping bag if you are on a couch. Pullout or otherwise, they don't come with bedding.
 21. Either bring something to soothe your throat or hearing protection, depending on if you want to scream out cheers or plug your ears because the rest of the team is trying to get the Loudest- sorry, I meant the Team Spirit Award. 
+22. Addendum to #8: The exact number of teams going to worlds varies depending on the year. Some years the entire winning alliance goes, sometimes only the captain and first pick go. Also, Wild Card awards are generally only ever handed out when one of the teams in a postition to go to Worlds already recived an invite from attending a previous competition. 
