@@ -9,3 +9,4 @@ Griffin is "Funny Hat". He chose this name, although I helped recommend it.
 Rowan is sport. He chose this name. 
 Serena is N/A. She chose this name.
 Zack is Zero The Hut. HI!
+Quinn is Traitor, because they ditched us for Ops. 
