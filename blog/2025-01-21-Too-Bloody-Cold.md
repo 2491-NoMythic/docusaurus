@@ -13,3 +13,4 @@ It is negative 19 degrees right now. I am very glad to be inside working on robo
 * Design Doc Update (Xiaohan): This has been updated with new sensor and motor details. 
 
 Also CornerGremlin showed up to chat for a bit. That was nice. 
+
