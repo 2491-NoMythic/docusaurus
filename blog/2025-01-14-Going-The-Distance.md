@@ -12,6 +12,6 @@ tags: [build season]
 * Other sensor stuff (Davey, Xiaohan): These two finalized the list of sensors we need to send to Build. 
 * Elevator Stuff (Davey, Me): We finished the early elevator code. We still need to add a distance sensor.
 * PID Loops (Rowan): The PID loops are finished.
-* Drive pathing (Zack): Zack started a drive pathing project.
+* Drive pathing (Zach): Zack started a drive pathing project.
 
 I have a headache.
