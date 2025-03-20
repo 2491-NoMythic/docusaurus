@@ -1,0 +1,136 @@
+# Hello! I'm Janus
+
+My favourite color is purple and I played in the 2022 game RAPID REACT!
+
+I am named after Janus, the Roman god of beginnings and endings. The god is typically depicted with having 2 faces, one facing the future and one facing the past. This name was chosen to represent the idea that our team has come back after the pandemic and is turning a new page in our book!
+
+I can do many things! (I can't acutally do too much, but I do what I do well) I am comprised of 5 subsystems: Drivetrain, Climber, Intake, Vision, and Lights! These files with have most of the important infomation for me and my drive code as well as any personal anecdotes that came with programming me!
+
+<details>
+  <summary>Drivetrain</summary>
+  <div>
+    <div>The drivetrain consists of 4 motors in a tank drive. We have LeftLead, LeftFollow, RightLead, and RightFollow and they all work in tandem. The idea of choosing a tank drive this year was to be a more physically defensive robot in order to play defense well as well as bring able to zoom and push cargo and robots around the field. Also in this subsystem is the Gyro affectionatly named "GyroBirb"
+  If it wasn't clear from the names, there are only 2 motors that we actually supply instructions to throughout the match, LeftLead and RightLead. LeftFollow and RightFollow are programmed to do whatever we tell their lead motors do which saves roboRio processing power which is really nice. (This only works on tank drivetrains becuse we really only need 2 inputs, a left side and a right side.)
+
+  ```java
+  leftFollowMotor.follow(leftLeadMotor);
+  rightFollowMotor.follow(rightLeadMotor);
+  ```
+
+  Within the constuctor also exists the setup for PID Tuning but this PID tuning system is a little different from normal. Both of the PID values being tuned are being stored on the name motor because we have a distance number and a turn number, so the PID tuning is pointed at the numbers only on one motor.
+  Another tidbit is that our TeleOp drive is different from our AutoDrive, AutoDrive is the only one with PID tuning, TeleOp doesn't use PID tuned driving.
+</div>
+    <br/>
+  </div>
+</details>
+
+<details>
+  <summary>Climber</summary>
+  <div>
+    <div>The climber is comprised of a pneumatic and 2 motors. The pneumatic controls the "Arm Tip State" and the motors move in tandem to extend or retract the climber arms. We wanted to use pneumatics becuse the speed and consistency of the pneumatics was going to be really useful for doing fast and consistent climbs.
+  The motors are a little complicated. The motors control a spool that dictates how far the arm can extend. The arm has springs that always push the arm out but the spools act like leashes and keep it from extending any more than we want it to.
+  The motor control is a PID loop with no kI and the auto control is really only used if we want to control the arm in a non-manual matter such as autos.
+  They have a magnetic limit switch at the bottom, preventing them from going down too far and the upward limit was predefined in the code and not controllable via the player.
+  Because we want to know the state of the arm so nothing runs into each other, we needed a way to find out the state of the subsystem in a fast call. To do this, we modified the control to not revolve on a TRUE/FALSE output, but rather on an ENUM that we created.
+  We created 2 different ENUMS each with their 2 different states. ArmExtendState to see if the arm is extended or retracted and ArmTipState to determine if the arm was tilted in or out. The naming convention isn't exactly the greatest... but it works for us!
+
+  ```java
+  package frc.robot;
+
+  public enum ArmExtendState {
+      DOWN,
+      UP
+  }
+
+  public enum ArmTipState {
+      IN,
+      OUT
+  }
+  ```
+  We control the arm with 2 different buttons: D-PAD left and D-PAD down. D-PAD left follows a sequential command that: tilts the arm out, extends the arms, and tilts the arms up. D-PAD down just retracts the arm. We programmed it like this to automate it for the drivers and make the climbing process an easier process.
+
+  ```java
+  public FullClimbPhase1(OldClimber climber, Intake intake, LightsHardware lights) {
+  ClimbLights climbLights = new ClimbLights(lights);
+  addCommands(
+    new InstantCommand(() -> { climbLights.schedule(); }),
+    new MoveArm(intake, IntakeArmState.armDown),
+    new TiltBackAndExtend(climber),
+    new ArmPneumaticTipping(climber, ArmTipState.IN)
+  );
+}
+  ```
+
+</div>
+    <br/>
+  </div>
+</details>
+
+<details>
+  <summary>Intake</summary>
+  <div>
+    <div>The intake is another subsystem that has 1 pneumatic and 2 motors. The pneumatic would raise and lover the intake of the robot and the motors on the end would be the things spinning bars to acutally intake and outtake the cargo.
+  The programming is not as complicated as some of the other subsystems. An interesting part however is that the intake could hold 2 pieces of cargo and intake/outtkake them separatly from each other. This system wasn't flawless, but it worked for the most part. To control the height of the intake, there were 2 buttons to control the pneumatic to either make the inake go up or down and similarly, there were 4 buttons for the motors: left intake, right intake, left outtake, right outtake. 
+
+  ```java
+  if (ps4Controller.getL2Button()) {
+      intake.leftIntake(IN_SPEED);
+    } else if (ps4Controller.getL1Button()) {
+      intake.leftIntake(OUT_SPEED);
+    } else {
+      intake.leftIntake(0);
+    }
+    if (ps4Controller.getR2Button()) {
+      intake.rightIntake(IN_SPEED);
+    } else if (ps4Controller.getR1Button()) {
+      intake.rightIntake(OUT_SPEED);
+    } else {
+      intake.rightIntake(0);
+    }
+  ```
+  
+</div>
+    <br/>
+  </div>
+</details>
+
+<details>
+  <summary>Vision</summary>
+  <div>
+    <div>There are 3 cameras on the robot. The limelight, a pixy, and a generic webcam. The limelight wasn't finished, but the idea was to be able to look at the center pillar and rotate to point to make scoring consistent. The pixy was implimented at home, but at competitions it went a little awry.
+  The pixy was supposed to identify the color of ball in our rollers and transmit that data to our lights. This was especially helpful if we had different colored balls in our rollers. We used an enum to dictate what kind of balls we have but the pixy was heavilly reliant on the lighting and once we made it to competition, the lighting at competiton was different than the one at home so it didn't work 
+
+  ```java
+  public enum CargoState {
+    Empty,
+    Red,
+    Blue,
+}
+  ```
+</div>
+    <br/>
+  </div>
+</details>
+
+<details>
+  <summary>Lights</summary>
+  <div>
+    <div>The lights this year were kind of a last minute add. We wanted to put lights on the robot after it finished so we decided to slap them on there attached to the intake. This turned out way prettier than we were expecing it to. We made 4 states for the lights that were going to be used: 
+    <ul>
+      <li>Purple, which made them all purplee</li>
+      <li>Rainbow, which were some ooh ahh swirly lights</li>
+      <li>Climbing, which made purple bits go upwards</li>
+      <li>Pit lights which made the robot go dim but not off to make robot surgery a little easier</li>
+    </ul>
+    </div>
+</div>
+    <br/>
+</details>
+
+Hello! From your past programmers:
+
+Liam S. (Captain)
+Royce J.
+Quinn F.
+Augie T.
+Ben H.
