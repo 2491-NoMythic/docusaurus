@@ -4,7 +4,7 @@ title: September Summary
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 Summary of things that happened during September and the first October practice:
 * ETT nights happened. We did the board demo, robot demo, and code demo, not in that exact order. 

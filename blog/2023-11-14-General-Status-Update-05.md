@@ -4,7 +4,7 @@ title: General Status Update 05
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 Here is a list of things that happened today.
 * Elevator Work (Me): The elevator should be able to go to a fixed position now. It has also been converted from Talon SRXs to SparkMaxes.  

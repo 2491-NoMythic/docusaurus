@@ -4,7 +4,7 @@ title: Damnatio Memoriae
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 Hello there ladies and gentlemen and others! We are back in the official training season. I was the only student here until about 7:30. Things that happened today:
 

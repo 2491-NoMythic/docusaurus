@@ -4,7 +4,7 @@ title: General Status Update 04
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 
 See comments from last week about wanting a replacement.
