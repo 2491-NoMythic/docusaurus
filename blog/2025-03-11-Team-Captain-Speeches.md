@@ -1,5 +1,5 @@
 ---
-slug: Y25-C2-S
+slug: Y25-C3-T
 title: Team Captain Speeches
 authors:
   - name: Augie
