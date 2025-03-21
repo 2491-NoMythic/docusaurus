@@ -4,7 +4,7 @@ title: Thanksgiving Break
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 It's the week of Thanksgiving, that lovely time of year where we meet our relatives, eat lots of food, and argue with said relatives about politics and said food. Avalon got the whole week off (ish, today and yesterday were flex/conference days), Great River gets the next three days off, and Robotics ceases for nothing.
 * Elevator Update (Rowan and I): A final draft of workable elevator code was created, with PID tuning to keep it upright.

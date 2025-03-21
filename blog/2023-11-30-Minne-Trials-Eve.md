@@ -6,7 +6,7 @@ authors:
     title: "[REDACTED]"
   - name: Davey
     title: Firebreathingrat
-tags: [training season 2023, limelight hell]
+tags: [training season, limelight hell]
 ---
 
 * Limelight Work (Augie, Xiohan, Act of Liam): We tried to get a limelight to functional. We had to flash it and then get the casing off to fix the fan. This took far longer than it should have.
