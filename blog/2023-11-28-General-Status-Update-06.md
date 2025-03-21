@@ -4,7 +4,7 @@ title: General Status Update 06
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 Headache too bad for funny.
 * Minne Trials Update (Xiaohan, Act of Liam, and I): The Robot is working now. We got the escalator working, and spent a while trying to get the wheels to cooperate. I spent half of the time standing around looking pretty because I didn't know what to do and other people were on the computer that was hooked up to the robot. This is not a good thing. 

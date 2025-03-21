@@ -4,7 +4,7 @@ title: Skeleton Crew
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 
 Most of the Avalon contingent (read: everyone but Davy and I) was at the Halloween Dance, Build canceled practice, and conferences were happening so the rest of us were crammed into the build room. There weren't that many of us total.

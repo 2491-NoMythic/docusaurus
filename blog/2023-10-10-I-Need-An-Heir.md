@@ -4,7 +4,7 @@ title: I Need An Heir
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 We are doing things again in Programming, which means that this can have the normal format again! But first a bit of housekeeping: Yes, the team retreat happened this weekend. Yes, it is very important to the team. No, I will not be covering the events here, because very little of it was relevant specifically and directly to Programming.
 * Java Courses (Zack, Davie, Griffin, AKA the New New Trio): The new students are working on Java. If you're wondering why Serena isn't, we'll get to that.

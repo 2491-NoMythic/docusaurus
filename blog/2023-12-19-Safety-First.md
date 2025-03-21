@@ -4,7 +4,7 @@ title: Safety First
 authors:
   - name: Augie
     title: "[REDACTED]"
-tags: [training season 2023]
+tags: [training season]
 ---
 
 Today was a safety training day for the team. Teen safety, not shop safety. But work never stops, so here is the list of things done in programming today:
