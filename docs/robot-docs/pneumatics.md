@@ -1,12 +1,8 @@
 # Pneumatics
 
-Pneumatics are air pressure powered pistons that provide explosive and strong power.
-
+Pneumatics are air pressure powered pistons that provide explosive and strong power. We control Pneumatics using  valves called "solenoids", which determine the direction that air flows. These valves can be programmed to provide mechanical motor, like motors and servos. We have used Pneumatics in the past(such as on Janus), but have mainly stopped using them.
 
 ## What comes with Pneumatics?
-
-I will preface that pneumatics are not actually called pneumatics in the code. They are called solenoids so from here on out I 
-may be calling them solenoids, but they're pretty much refer the same thing.
 
 There are really 3 main objects that come with the pneumatics package, the Pneumatics Control Module (PCM), the Compressor, and 
 the Solenoid. There are other things that exist, but in the code those are really the only things you need to worry about. The PCM 

@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # How to edit files
 
-If the question was asked "How do I edit a file" you would get lots of opinions, and it would matter what type of files we meant. You don't use a CAD program, an image editor, and a text editor all on the same file. At least most of us don't we use purpose built tools. Here I am only going to talk about text editors. And just the ones we use with robotics here at NoMythic. If you have a favorite, go ahead and use it, but the mentors may not be as knowledgeable about that tool if you have issues.
+If the question was asked "How do I edit a file?" you would get lots of opinions, and it would matter what type of files we meant. You don't use a CAD program, an image editor, and a text editor all on the same file- we use purpose built tools. Here I am only going to talk about text editors. And just the ones we use with robotics here at NoMythic. If you have a favorite, go ahead and use it, but the mentors may not be as knowledgeable about that tool if you have issues.
 
 ## Notepad on Windows, TextEdit on Mac
 
@@ -15,7 +15,7 @@ We often start with students with Circuit Python, and use this very basic editor
 
 ## Arduino IDE (c and arduino)
 
-Sometimes we code sik lights and sensors on helper boards. If we are coding these in the C like Arduino code, this IDE makes sense, and since the 2.0 version was released, it has become much better. It has a built in serial console, board library, and code library management. V2 has much improved code suggestions. Check out [here](https://docs.arduino.cc/software/ide-v2) to install it. 
+Sometimes we code lights and sensors on helper boards. If we are coding these in the C like Arduino code, this IDE makes sense, and since the 2.0 version was released, it has become much better. It has a built in serial console, board library, and code library management. V2 has much improved code suggestions. Check out [here](https://docs.arduino.cc/software/ide-v2) to install it. 
 
 ## VS Code (robot code, NoMythicApp, and docusaurus)
 

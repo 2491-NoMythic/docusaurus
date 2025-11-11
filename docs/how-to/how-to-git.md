@@ -6,21 +6,21 @@ sidebar_position: 2
 
 ## Installing Git
 
-If you are on a Mac, pat yourself on the back and go to the next section, git is built in.
+If you are on a Mac, pat yourself on the back and go to the next section, Git is built in.
 
-On Windows, I suggest installing GitBash. This will give you a terminal with the git tools installed. See [Install Git](https://www.gitkraken.com/learn/git/git-download)
+On Windows, I suggest installing GitBash. This will give you a terminal with the Git tools installed. See [Install Git](https://www.gitkraken.com/learn/git/git-download)
 
 ## What is Git?
 
-Git is a way to store and manage versions of things like text files and images. We use it to manage our source code for the robot and for docusaurous. Git is not the only way this could be done. These systems are called Version Control Systems. Git is very popular and what we use. We can use a command line, or various programs to do this. We will got to that later but we need to talk about the why.
+Git is a Version Control System, meaning it is a way to store and manage versions of things like text files and images. We use it to manage our source code for the robot and for docusaurus. We can use a command line, or various programs to use Git. We will get to that later, but first we need to talk about why we use Git.
 
 ## Why use Git?
 
-Git is a distributed version control system. This means that there doesn't have to be one server that holds all the code. In practice, most teams use someplace like GitHub (or Bitbucket, etc) to be the "official" repository of their code. We do too. But that does not mean that you edit the code on GitHub. You stil edit code locally on your computer and then "push" your code to the server. This is good becuase many people can work on one file, or files on their own computer, and then put them together on the server, called merging. We do this so that the last person to upload code doesn't win. We want to get everyones contributions. Lets back up.
+Git is a Distributed Version Control System. This means that there doesn't have to be one server that holds all the code. In practice, most teams use someplace like GitHub (or Bitbucket, etc) to be the "official" repository of their code. We use GitHub to store all of our code, but that does not mean that you can just edit the code on GitHub. You stil edit code locally on your computer and then "push" your code to the server. This is good becuase many people can work on one file, or work on files on their own computer, and then put them together on the server, by doing something called "merging". We do this so that the last person to upload code doesn't erase all the other contributions.
 
 ## How does this work?
 
-You get a "main" and you get a "main" and you get a "main. When I said there are versions of a file there are actually versions of a group of files. This group is called a branch. The main, or official branch is called "main" in most of our repositories. (Old ones were called master - we and the community have stopped calling it that) When you work on changes you will work on a different branch. Rember how I said this was distributed? That means that each computer that is working with a repository will have the main branch on their machine. Everyones main branch might not have exactly the same changes, but they could, by syncing with the main branch on Github.
+You get a "main" and you get a "main" and you get a "main". When I said there are versions of a file there are actually versions of a group of files. This group is called a branch. The main, or official branch is called "main" in most of our repositories. (Old ones were called master - we and the community have stopped calling it that) When you work on changes you will work on a different branch. Rember how I said this was distributed? That means that each computer that is working with a repository will have the main branch on their machine. Everyones main branch might not have exactly the same changes, but they could, by syncing with the main branch on Github.
 
 ## No really, how does this work?
 

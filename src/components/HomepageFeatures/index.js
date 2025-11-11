@@ -10,10 +10,10 @@ const FeatureList = [
     imageurl: require('@site/static/img/Clover_Janusx200.jpg').default,
     description: (
       <>
-        Documentaion out team wants to know for next time. What worked, what didn't,
-        and info on each years robot is in this section.
+        Documentation of the things we learned during the year. What worked, what didn't,
+        and info on our robots are in this section.
       </>
-    ),
+    ),  
   },
   {
     title: 'Tutorials',
@@ -21,7 +21,7 @@ const FeatureList = [
     imageurl: require('@site/static/img/circuit_playground.jpg').default,
     description: (
       <>
-        Tutorials and How to's to help you learn different topics. From python on 
+        Tutorials and How Tos to help you learn different topics. From Python on 
         Adafruit Circuit boards to an Intro to Java, and more.
       </>
     ),
