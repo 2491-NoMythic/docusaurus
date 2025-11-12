@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 const FeatureList = [
   {
     title: 'Robot Docs',
-    link: '/docs/robot-docs',
+    link: '/docs/category/robot-docs',
     imageurl: require('@site/static/img/Clover_Janusx200.jpg').default,
     description: (
       <>
