@@ -6,7 +6,7 @@ In order to implement simulation, changes to the build.gradle file are required.
 ## Code 
 This code must be put in dependencies(colors of text may not look the same): 
 dependencies {
-```java
+```groovy
     genericGradleThing wpi.java.deps.genericThing()
     genericGradleThing2 wpi.java.deps.genericThing2(wpi.platforms.genericTech)  
     
@@ -22,7 +22,7 @@ dependencies {
 }
 
 And this code can be put directly after the ending bracket of dependencies(or other places): 
-```java
+```groovy
 task(replayWatch, type: JavaExec) { 
     mainClass = "org.littletonrobotics.junction.ReplayWatch"
     classpath = sourceSets.main.runtimeClasspath

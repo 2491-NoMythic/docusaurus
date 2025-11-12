@@ -5,7 +5,7 @@
 An inputs class can be built in two ways:
 
 1. All the class does is hold each input as a variable. An example of this is our DriveTrainSubsystemInputs class from BaseSwerve2025:
-'''java
+```java
 package frc.robot.LogInputs;
 
 import org.littletonrobotics.junction.AutoLog;
@@ -25,7 +25,7 @@ public class DrivetrainInputs {
     public double gyroTimeStamp;
     public double angularVelocity;
 }
-'''
+```
 
 This class stores each input variable we have for our drivetrain. The @AutoLog annotation above the class decleration is required. This will cause the annotation processor to create a new class whenever you build the code. This auto-generated class will take care of accessing the log file to send and recieve logged inputs.
 
