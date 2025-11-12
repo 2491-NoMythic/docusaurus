@@ -20,7 +20,10 @@ Git is a Distributed Version Control System. This means that there doesn't have 
 
 ## How does this work?
 
-You get a "main" and you get a "main" and you get a "main". When I said there are versions of a file there are actually versions of a group of files. This group is called a branch. The main, or official branch is called "main" in most of our repositories. (Old ones were called master - we and the community have stopped calling it that) When you work on changes you will work on a different branch. Rember how I said this was distributed? That means that each computer that is working with a repository will have the main branch on their machine. Everyones main branch might not have exactly the same changes, but they could, by syncing with the main branch on Github.
+ When I said there are versions of a file, I meant that there are actually versions of a group of files. This group is called a repository, and it stores the history of your project. This history is made up of commits(save-points), tags(milestone markers), and branches. Branches are used to create seperate lines of developement, so code can be changed without affecting the project directly. 
+ 
+ A good way to understand this is to think of branch structure like a tree: The code we use, or official branch is called "main" in most of our repositories(Old ones were called master - we and the community have stopped calling it that). It functions like the trunk of tree, because everything comes from it. When you want changes to the project, you will create a different branch growing off of main to work on. This branch will be a copy of the main project, but any changes made to it will not affect any other branch.
+ Each computer then will have its own copy of the main "tree" that they can edit independently. Remember how I said this was distributed? That means that each computer that is working with a repository will have the main branch on their machine. Everyone's main branch might not have exactly the same changes, but they could, by syncing with the main branch on Github.
 
 ## No really, how does this work?
 
@@ -78,9 +81,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 Lots of stuff! We have a message telling us that there are files not staged for commit, and they are the README.md file. It was modified (as opposed to added or deleted)
 
-# 4) Lets add and commit
+# 4) Let's add and commit
 
-Just like the message said, lets add our file. `git add README.md` Then try `git status` again. 
+Just like the message said, let's add our file. `git add README.md` Then try `git status` again. 
 
 ```bash
 On branch first-branch
@@ -88,20 +91,20 @@ Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
 	modified:   README.md
 ```
-We are gitting closer to making git happy now. We have 'staged' the README.md file and we can now commit it. We want to give our commit a message, so `git commit -m "updated readme"`. Now what does `git status` tell us?
+We are "gitting" closer to making Git happy now. We have 'staged' the README.md file and we can now commit it. We want to give our commit a message, so `git commit -m "updated readme"`. Now what does `git status` tell us?
 
 ```bash
 On branch first-branch
 nothing to commit, working tree clean
 ```
 
-## 5) Can other see our changes?
+## 5) Can others see our changes?
 
 Not yet. We have committed (saved) our changes to our branch, but we have not 'pushed' the changes to GitHub yet. When we do a push, we will be pushing our code to the remote that we got the code from, which in our case was Github, and the NoMythic/test repo.
 
 If you have a new version of Git installed, you should be able to just say `git push` and it will work. Older version required `git push origin first-branch`
 
-## 6) Now others can see the code?
+## 6) Now can others see our changes?
 
 Yup, but not as easily. We now have a branch called first-branch that is on Github, and people could download it, but it isn't in main, and we want to show others what changed and make sure our new changes look right. Lets make a PR or pull request.
 

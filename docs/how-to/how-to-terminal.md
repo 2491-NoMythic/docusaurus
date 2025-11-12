@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # How to Terminal
 
-Sometimes it is usefull to leave the world of a mouse and type commands at a command prompt in a termial. The commands are a bit different on Mac and Windows, but we will try to show both.
+Sometimes it is useful to leave the world of a mouse, and type commands in a terminal. The commands are a bit different on Mac and Windows, but we will try to show both.
 
 ## How to get a command prompt
 
-You need to use a progam that you can type these commands in. On Mac, that would be Terminal, and on Windows, that is CMD.exe. (new windows have powershell, but we will just use CMD)
+You need to use a progam that you can type these commands in. On Mac, that would be Terminal, and on Windows, that is CMD.exe(Command Prompt). (Newer Windows have Powershell, but we will just use CMD)
 
 ## Where am I?
 
