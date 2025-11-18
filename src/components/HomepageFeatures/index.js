@@ -17,7 +17,7 @@ const FeatureList = [
   },
   {
     title: 'Tutorials',
-    link: '/docs/category/robot-tutorials',
+    link: '/docs/category/tutorials-for-new-programmers',
     imageurl: require('@site/static/img/circuit_playground.jpg').default,
     description: (
       <>
