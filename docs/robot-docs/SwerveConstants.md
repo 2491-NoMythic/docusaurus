@@ -1,5 +1,5 @@
 ---
-side-bar position: 5
+sidebar_position: 5
 ---
 Hello! Here is the list of constants to use with swerve. If you have no idea what this is, go back and read the Swerve page. Make sure to measure things and put in your own numbers after all of these. It is why there are no = signs.
 ```java

@@ -1,5 +1,5 @@
 ---
-side-bar position: 4
+sidebar_position: 4
 ---
 
 # Swerve
