@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Swerve
 
 ## What is Swerve?
@@ -6,7 +10,7 @@ Swerve drive, or swerve, is a type of drivetrain. It has one wheel in each corne
 
 ## Why Is This Good?
 
-Swerve drive has a number of benefits, both obvious and unobvious. The obvious ones are metioned above: high speed and high manuverability without sacrifices to either. A slighty less obvious benefit is connected to that mobility, and more specifically the rotation. The robot is able to move in a direction while pointing in another, allowing for extreme precision during shooter games. The least obvious benefit is simply the amount of things the prereqs allow. Just getting the wheels moving in the same direction requires a gyroscope and field map, which can easily be paired with a limelight for extreme degrees of autonomy. 
+Swerve drive has a number of benefits, both obvious and unobvious. The obvious ones are metioned above: high speed and high manuverability with no sacrifices needed. A slightly less obvious benefit is connected to that mobility, and more specifically the rotation. The robot is able to move in a direction without having to rotate, allowing for extreme precision during shooter games. The least obvious benefit is simply the amount of things the prereqs allow. Just getting the wheels moving in the same direction requires a gyroscope and field map, which can easily be paired with a limelight for extreme degrees of autonomy. 
 
 ## Prerequisites
 
@@ -38,7 +42,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.settings.Constants.DriveConstants;
 ```
 
-### Swerve Module
+### Swerve Modules
 
 A swerve drive is made up of four modules. Each module has a wheel, two motors, and an encoder. In the code, you need the motors, an encoder, and a Rotation2d. You also need a bunch of variables, like the steering angle and driving speed. These specific varaibles are used in the controlling bit specifically.
 ```java

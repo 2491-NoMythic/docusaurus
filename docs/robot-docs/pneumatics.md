@@ -1,12 +1,8 @@
 # Pneumatics
 
-Pneumatics are air pressure powered pistons that provide explosive and strong power.
-
+Pneumatics are air pressure powered pistons that provide explosive and strong power. We control our pneumatics using  valves called "solenoids", which determine the direction that air flows. These valves can be programmed to provide mechanical motor, like motors and servos. We have used pneumatics in the past (on Janus for example), but have mainly stopped using them.
 
 ## What comes with Pneumatics?
-
-I will preface that pneumatics are not actually called pneumatics in the code. They are called solenoids so from here on out I 
-may be calling them solenoids, but they're pretty much refer the same thing.
 
 There are really 3 main objects that come with the pneumatics package, the Pneumatics Control Module (PCM), the Compressor, and 
 the Solenoid. There are other things that exist, but in the code those are really the only things you need to worry about. The PCM 
@@ -30,15 +26,11 @@ public class Pneumatics extends SubsystemBase {
     }
 }
 ```
-Wow. That was so fun guys, we made a solenoid. I will note that a DoubleSolenoid is different from a regular Solenoid. A Solenoid 
-only has 1 channel to move in, whereas a DoubleSolenoid has 2. Usually we use a DoubleSolenoid because we like the 
-capability to go in both directions. DoubleSolenoids are simple though. They have 3 states: Forward, Reverse, and Off. Let's think 
-about what that acutally looks like. Forward is the state of the solenoid that pushes outward, reverse is the state that retracts 
-inward and Off means that it'll do nothing. 
+Wow. That was so fun guys, we made a solenoid. I will note that a DoubleSolenoid is different from a regular Solenoid. A regular Solenoid only has 1 channel to move in, whereas a DoubleSolenoid has 2. Usually we use a DoubleSolenoid because we like to have the capability to move in both directions. 
 
-Forward and Reverse have their own numbered channels that you can assign them to. They have to be wired into the solenoid, but 
-each port has a number so you can figure out with port/number is associated with the Forward and Reverse states of the solenoid, 
-so let's actually give the solenoid some numbers. They take 3 values: The manufacturer of the solenoid, the forward channel port, and the reverse channel port.
+To program a DoubleSolenoid, you need to know that they have 3 states: Forward, Reverse, and Off. Forward is the state of the solenoid that pushes outward, Reverse is the state that retracts inward and Off is the state that stops the DoubleSolenoid, making it do nothing. 
+
+Forward and Reverse have their own numbered channels that you can assign them to. They have to be wired into the solenoid, but each port has a number so you can figure out with port/number is associated with the Forward and Reverse states of the solenoid. Now let's actually give the solenoid some numbers. They take 3 values: The manufacturer of the solenoid, the forward channel port, and the reverse channel port.
 ```java
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
@@ -52,8 +44,7 @@ public class Pneumatics extends SubsystemBase {
     }
 }
 ```
-Now that we have a solenoid, let's make some methods to go with it so we can call it in a command. We are going to need kForward 
-and kReverse values. They just are values that tell the solenoid what exactly it should do with a given method.
+Now that we have a solenoid, let's make some methods to go with it so we can call it in a command. We are going to need kForward and kReverse values. These values tell the solenoid to activate a certain method.
 ```java
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;

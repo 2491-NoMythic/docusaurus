@@ -10,7 +10,7 @@ VS Code has become a defacto stndard editor in many circles due to it being free
 
 The NoMythicApp is also being developed in Typescript/Javascript using VS Code. It is recommended but not required to use it for development. You can use the VS Code that came with the FRC install, or if you do not need those tools, download it [here](https://code.visualstudio.com)
 
-Docusaurous pages are written mostly in markdown. This means any text editor will do, but useing the above link to install VS Code will allow you to see an immediate accurate preview of the markdown (.md) file that you are edting. 
+Docusaurus pages are written mostly in markdown. This means any text editor will do, but useing the above link to install VS Code will allow you to see an immediate accurate preview of the markdown (.md) file that you are edting. 
 
 ## Get Started
 
@@ -67,6 +67,6 @@ Shift-Command-p or Shift-CTRL-p will bring up a list of actions that you can do.
 
 ## Build Robot Code
 
-You have to have the WPILib plugin for this. If you do that same -p command as above and type wpilib into the command search, you will see all the wpilib commands. The most often used are to build and deploy robot code.
+You have to have the WPILib plugin for this. If you use that same -p command as above and type wpilib into the command search, you will see all the wpilib commands. The most often used are to build and deploy robot code.
 
 See the [WPILib page](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/vscode-basics.html) for a little more on the plugin. 
