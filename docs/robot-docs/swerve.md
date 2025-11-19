@@ -1,3 +1,7 @@
+---
+side-bar position: 4
+---
+
 # Swerve
 
 ## What is Swerve?
@@ -38,7 +42,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.settings.Constants.DriveConstants;
 ```
 
-### Swerve Module
+### Swerve Modules
 
 A swerve drive is made up of four modules. Each module has a wheel, two motors, and an encoder. In the code, you need the motors, an encoder, and a Rotation2d. You also need a bunch of variables, like the steering angle and driving speed. These specific varaibles are used in the controlling bit specifically.
 ```java
