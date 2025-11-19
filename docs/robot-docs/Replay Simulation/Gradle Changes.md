@@ -10,11 +10,9 @@ In order to implement simulation, changes to the build.gradle file are required.
 ## Code 
 This code must be put in dependencies: 
 ```groovy
-    //CODE START
     def akitJson = new groovy.json.JsonSlurper().parseText(
         new File(projectDir.getAbsolutePath() + "/vendordeps/AdvantageKit.json").text)
     annotationProcessor "org.littletonrobotics.akit:akit-autolog:$akitJson.version"
-    //CODE END
 ```
 
 And this code can be put directly after the ending bracket of dependencies(or other places): 
