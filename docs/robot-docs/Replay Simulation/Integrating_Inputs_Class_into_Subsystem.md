@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Integrating Inputs Class into Subsystem
 
 

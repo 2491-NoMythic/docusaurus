@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Creating an Inputs Class
 
 ## What is in an inputs class?
