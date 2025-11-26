@@ -14,7 +14,8 @@ DrivetrainInputsAutoLogged inputs;
 
 public DrivetrainSubystem() {
     inputs = new DrivetrainInputsAutoLogged();
-    //define other Objects for the subsystem
+    //define other Objects for the 
+}
 ```
 
 
