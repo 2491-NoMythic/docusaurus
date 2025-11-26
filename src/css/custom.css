@@ -31,8 +31,9 @@
   color:#3f1848;
   --ifm-menu-color: #3f1848;
 }
-:root:hover{
-  --ifm-menu-color: blue;
+.menu li:hover{
+  --ifm-menu-color: #8f3cad;
+  --ifm-menu-color-active: #8f3cad;
 }
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 /* [data-theme='dark'] {
