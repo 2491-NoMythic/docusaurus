@@ -1,0 +1,8 @@
+{
+  "label": "Circuit Playground Tutorial",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "How to use Circuit Playgrounds with Python... Not very useful because we use Java with the Circuit Playgrounds now. "
+  }
+}

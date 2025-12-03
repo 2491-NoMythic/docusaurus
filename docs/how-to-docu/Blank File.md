@@ -6,3 +6,6 @@ sidebar_position: 100
 
 ## Why?
 This is a blank docusaurus file that can be copied in Visual Studio to serve as a basis for new webpages. 
+
+## Sources
+[Example Source](https://docusaurus.io/)
