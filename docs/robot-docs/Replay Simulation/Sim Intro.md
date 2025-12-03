@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 
 # Intro To Simulation
-In FRC, Simulation is testing code without a physical robot. This allows you to quickly debug and develop code before the robot is made and while it is competing. Simulation comes in three main forms in order of difficulty: Running code on a laptop, simulating hardware, and simulating environment(not normally used in FRC). 
+In FRC, Simulation is testing code without a physical robot. This allows you to quickly debug and develop code before the robot is made and while it is competing. Simulation comes in three main forms in order of difficulty: Running code on a laptop, simulating hardware, and simulating environment (not normally used in FRC). 
 
 ## Sources
 [NoMythic Simulation Google Doc](https://docs.google.com/document/d/13F6GO_e3fENr6bYeQux29UXtqi7mdO8z0uJELuAZY3Y/edit?pli=1&tab=t.ejcfcjau18wn)
